@@ -46,6 +46,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -240,54 +241,76 @@ h2 {
   50%      { transform: rotate(-3deg); }
 }
 
-/* Light ray effects */
+/* Light ray effects — animated triangular beams */
 .disco-light-rays {
   position: absolute;
-  inset: -60px;
+  inset: -80px;
   pointer-events: none;
-  animation: pendulumSwing 6s ease-in-out infinite reverse;
+  animation: raysRotate 12s linear infinite;
 }
 
 .ray {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 3px;
-  height: 100px;
+  width: 0;
+  height: 0;
   transform-origin: top center;
-  opacity: 0.08;
-  border-radius: 0 0 2px 2px;
+  opacity: 0.15;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
 }
 
 .ray-1 {
-  background: linear-gradient(to bottom, var(--gold), transparent);
-  transform: rotate(-55deg) translateY(-10px);
-  height: 90px;
+  border-bottom: 110px solid var(--gold);
+  transform: rotate(-60deg) translateY(-10px);
+  opacity: 0.18;
 }
 .ray-2 {
-  background: linear-gradient(to bottom, var(--pink), transparent);
-  transform: rotate(-25deg) translateY(-10px);
-  height: 110px;
+  border-bottom: 130px solid var(--pink);
+  transform: rotate(-15deg) translateY(-10px);
+  opacity: 0.14;
+  border-left-width: 8px;
+  border-right-width: 8px;
 }
 .ray-3 {
-  background: linear-gradient(to bottom, var(--sky), transparent);
-  transform: rotate(5deg) translateY(-10px);
-  height: 95px;
+  border-bottom: 100px solid var(--sky);
+  transform: rotate(20deg) translateY(-10px);
+  opacity: 0.16;
 }
 .ray-4 {
-  background: linear-gradient(to bottom, var(--gold), transparent);
-  transform: rotate(35deg) translateY(-10px);
-  height: 105px;
+  border-bottom: 120px solid var(--gold);
+  transform: rotate(55deg) translateY(-10px);
+  opacity: 0.13;
+  border-left-width: 7px;
+  border-right-width: 7px;
 }
 .ray-5 {
-  background: linear-gradient(to bottom, var(--pink), transparent);
-  transform: rotate(60deg) translateY(-10px);
-  height: 85px;
+  border-bottom: 95px solid var(--pink);
+  transform: rotate(90deg) translateY(-10px);
+  opacity: 0.15;
 }
 .ray-6 {
-  background: linear-gradient(to bottom, var(--orange), transparent);
-  transform: rotate(-80deg) translateY(-10px);
-  height: 75px;
+  border-bottom: 85px solid var(--orange);
+  transform: rotate(-85deg) translateY(-10px);
+  opacity: 0.12;
+}
+.ray-7 {
+  border-bottom: 115px solid var(--sky);
+  transform: rotate(140deg) translateY(-10px);
+  opacity: 0.14;
+  border-left-width: 7px;
+  border-right-width: 7px;
+}
+.ray-8 {
+  border-bottom: 105px solid var(--gold);
+  transform: rotate(-140deg) translateY(-10px);
+  opacity: 0.16;
+}
+
+@keyframes raysRotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 /* ---------- Cloud Bubbles ---------- */
@@ -327,8 +350,9 @@ h2 {
 .cloud-right { animation-delay: 1.5s; }
 
 @keyframes cloudBob {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-6px); }
+  0%, 100% { transform: translateY(0) scale(1); }
+  30%      { transform: translateY(-8px) scale(1.03); }
+  70%      { transform: translateY(-3px) scale(0.98); }
 }
 
 /* ---------- Hero Content / Typography ---------- */
@@ -348,24 +372,49 @@ h2 {
 .title-compliment {
   display: block;
   font-size: clamp(3.5rem, 13vw, 7.5rem);
-  color: var(--pink);
   letter-spacing: 0.02em;
-  text-shadow:
-    3px 3px 0 rgba(232, 75, 138, 0.2),
-    6px 6px 0 rgba(232, 75, 138, 0.08);
   -webkit-text-stroke: 1px rgba(92, 61, 46, 0.08);
+  background: linear-gradient(
+    90deg,
+    var(--pink) 0%,
+    var(--orange) 25%,
+    var(--gold) 50%,
+    var(--pink) 75%,
+    var(--pink) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: titleShimmer 4s ease-in-out infinite;
+  filter: drop-shadow(3px 3px 0 rgba(232, 75, 138, 0.15));
 }
 
 .title-fest {
   display: block;
   font-size: clamp(3.5rem, 13vw, 7.5rem);
-  color: var(--gold);
   letter-spacing: 0.02em;
-  text-shadow:
-    3px 3px 0 rgba(245, 200, 66, 0.25),
-    6px 6px 0 rgba(245, 200, 66, 0.1);
   -webkit-text-stroke: 1px rgba(92, 61, 46, 0.06);
   margin-top: -0.15em;
+  background: linear-gradient(
+    90deg,
+    var(--gold) 0%,
+    var(--orange) 25%,
+    var(--pink) 50%,
+    var(--gold) 75%,
+    var(--gold) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: titleShimmer 4s ease-in-out infinite 0.5s;
+  filter: drop-shadow(3px 3px 0 rgba(245, 200, 66, 0.2));
+}
+
+@keyframes titleShimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
 }
 
 .subtitle {
@@ -451,9 +500,35 @@ h2 {
   animation-delay: 0.5s;
 }
 
+.sparkle-6 {
+  width: 11px; height: 11px;
+  top: 45%; left: 18%;
+  animation-delay: 2.2s;
+  background: var(--sky);
+  animation-duration: 2.5s;
+}
+
+.sparkle-7 {
+  width: 8px; height: 8px;
+  top: 15%; left: 55%;
+  animation-delay: 1.5s;
+  background: var(--gold);
+  animation-duration: 3.5s;
+}
+
+.sparkle-8 {
+  width: 13px; height: 13px;
+  top: 55%; left: 75%;
+  animation-delay: 0.3s;
+  background: var(--pink);
+  animation-duration: 2.8s;
+}
+
 @keyframes twinkle {
-  0%, 100% { opacity: 0.2; transform: scale(0.8) rotate(0deg); }
-  50%      { opacity: 0.7; transform: scale(1.1) rotate(15deg); }
+  0%, 100% { opacity: 0.15; transform: scale(0.6) rotate(0deg); }
+  25%      { opacity: 0.5; transform: scale(0.9) rotate(8deg); }
+  50%      { opacity: 0.85; transform: scale(1.2) rotate(18deg); }
+  75%      { opacity: 0.4; transform: scale(0.85) rotate(10deg); }
 }
 
 /* ---------- SVG Music Notes ---------- */
@@ -473,6 +548,69 @@ h2 {
   width: 22px;
   top: 40%;
   left: 12%;
+}
+
+/* ---------- Disco Glow Pool ---------- */
+.disco-glow {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(320px, 70vw);
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(245, 200, 66, 0.25) 0%,
+    rgba(232, 75, 138, 0.15) 40%,
+    rgba(245, 166, 35, 0.08) 65%,
+    transparent 100%
+  );
+  z-index: 1;
+  animation: glowPulse 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+  50%      { opacity: 1; transform: translateX(-50%) scale(1.08); }
+}
+
+/* ---------- Confetti Particles ---------- */
+.confetti-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.confetti {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: confettiFall linear infinite;
+}
+
+.confetti-1  { left: 8%;  background: var(--pink);   width: 5px;  height: 5px;  animation-duration: 8s;  animation-delay: 0s; }
+.confetti-2  { left: 18%; background: var(--gold);   width: 7px;  height: 7px;  animation-duration: 10s; animation-delay: 1.2s; }
+.confetti-3  { left: 30%; background: var(--sky);    width: 4px;  height: 4px;  animation-duration: 9s;  animation-delay: 3s; }
+.confetti-4  { left: 42%; background: var(--orange); width: 6px;  height: 6px;  animation-duration: 11s; animation-delay: 0.8s; }
+.confetti-5  { left: 55%; background: var(--pink);   width: 5px;  height: 5px;  animation-duration: 8.5s; animation-delay: 2.5s; }
+.confetti-6  { left: 65%; background: var(--green);  width: 4px;  height: 4px;  animation-duration: 10s; animation-delay: 4s; }
+.confetti-7  { left: 75%; background: var(--gold);   width: 7px;  height: 7px;  animation-duration: 9.5s; animation-delay: 1.8s; }
+.confetti-8  { left: 85%; background: var(--sky);    width: 5px;  height: 5px;  animation-duration: 8s;  animation-delay: 3.5s; }
+.confetti-9  { left: 92%; background: var(--pink);   width: 6px;  height: 6px;  animation-duration: 11s; animation-delay: 0.5s; }
+.confetti-10 { left: 50%; background: var(--orange); width: 4px;  height: 4px;  animation-duration: 9s;  animation-delay: 5s; }
+
+@keyframes confettiFall {
+  0%   { transform: translateY(-10px) rotate(0deg); opacity: 0; }
+  10%  { opacity: 0.6; }
+  50%  { opacity: 0.4; }
+  90%  { opacity: 0.15; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
 }
 
 /* ---------- Grass Ground ---------- */
@@ -779,6 +917,7 @@ h2 {
   text-align: center;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
 /* Organic background shape */
@@ -952,6 +1091,20 @@ h2 {
     height: 40px;
   }
 
+  .disco-light-rays {
+    inset: -50px;
+  }
+
+  .ray {
+    border-left-width: 4px !important;
+    border-right-width: 4px !important;
+  }
+
+  .disco-glow {
+    bottom: 8%;
+    height: 40px;
+  }
+
   .info-cards {
     padding: 2rem 1rem;
   }
@@ -982,12 +1135,26 @@ h2 {
     display: none;
   }
 
+  .confetti {
+    width: 4px !important;
+    height: 4px !important;
+  }
+
   .hero-ground {
     height: 80px;
   }
 
   .title {
     transform: rotate(-1deg);
+  }
+
+  .bg-circle {
+    max-width: 100vw;
+  }
+
+  .rainbow-arc {
+    width: min(400px, 90vw);
+    height: min(200px, 45vw);
   }
 }
 
