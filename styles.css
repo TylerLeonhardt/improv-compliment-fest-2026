@@ -418,21 +418,21 @@ h2 {
 }
 
 .deco-flower-1 {
-  bottom: 12%;
+  bottom: 18%;
   left: 10%;
   width: 120px;
   height: 120px;
 }
 
 .deco-flower-2 {
-  bottom: 14%;
+  bottom: 20%;
   right: 10%;
   width: 110px;
   height: 110px;
 }
 
 .deco-flower-3 {
-  bottom: 8%;
+  bottom: 18%;
   left: 18%;
   width: 80px;
   height: 80px;
@@ -1145,9 +1145,9 @@ h2 {
     opacity: 0.8;
   }
 
-  .deco-flower-1 { width: 70px; height: 70px; bottom: 14%; left: 8%; }
-  .deco-flower-2 { width: 65px; height: 65px; bottom: 16%; right: 8%; }
-  .deco-flower-3 { width: 50px; height: 50px; bottom: 10%; }
+  .deco-flower-1 { width: 70px; height: 70px; bottom: 20%; left: 8%; }
+  .deco-flower-2 { width: 65px; height: 65px; bottom: 22%; right: 8%; }
+  .deco-flower-3 { width: 50px; height: 50px; bottom: 18%; }
   .deco-flower-4,
   .deco-flower-5,
   .deco-flower-6,
@@ -1177,6 +1177,7 @@ h2 {
   .rainbow-arc {
     width: min(380px, 88vw);
     height: min(220px, 50vw);
+    bottom: 3%;
   }
 
   .rainbow-arc .rb {
@@ -1256,6 +1257,10 @@ h2 {
   .footer-wave {
     margin-left: -1rem;
     margin-right: -1rem;
+  }
+
+  .rainbow-arc {
+    bottom: 1%;
   }
 
 }
