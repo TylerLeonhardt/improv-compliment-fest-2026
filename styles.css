@@ -152,6 +152,7 @@ h2 {
   transform: translateX(-50%);
   z-index: 0;
   pointer-events: none;
+  overflow: hidden;
 }
 
 .rb {
@@ -418,35 +419,35 @@ h2 {
 
 .deco-flower-1 {
   bottom: 12%;
-  left: 6%;
+  left: 10%;
   width: 120px;
   height: 120px;
 }
 
 .deco-flower-2 {
   bottom: 14%;
-  right: 6%;
+  right: 10%;
   width: 110px;
   height: 110px;
 }
 
 .deco-flower-3 {
-  bottom: 5%;
+  bottom: 8%;
   left: 18%;
   width: 80px;
   height: 80px;
 }
 
 .deco-flower-4 {
-  top: 8%;
-  left: 5%;
+  top: 10%;
+  left: 10%;
   width: 90px;
   height: 90px;
 }
 
 .deco-flower-5 {
   top: 12%;
-  right: 5%;
+  right: 10%;
   width: 80px;
   height: 80px;
 }
@@ -560,31 +561,7 @@ h2 {
   left: 14%;
 }
 
-/* ---------- Disco Glow Pool ---------- */
-.disco-glow {
-  position: absolute;
-  bottom: 12%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(400px, 80vw);
-  height: 80px;
-  border-radius: 50%;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(245, 200, 66, 0.5) 0%,
-    rgba(232, 75, 138, 0.35) 40%,
-    rgba(245, 166, 35, 0.2) 65%,
-    transparent 100%
-  );
-  z-index: 1;
-  animation: glowPulse 3s ease-in-out infinite;
-  pointer-events: none;
-}
 
-@keyframes glowPulse {
-  0%, 100% { opacity: 0.7; transform: translateX(-50%) scale(1); }
-  50%      { opacity: 1; transform: translateX(-50%) scale(1.06); }
-}
 
 /* ---------- Confetti Particles ---------- */
 .confetti-container {
@@ -1013,6 +990,7 @@ h2 {
 }
 
 .footer-wave {
+  margin-top: -2px;
   margin-bottom: 2rem;
   margin-left: -1.5rem;
   margin-right: -1.5rem;
@@ -1063,12 +1041,7 @@ h2 {
   font-weight: 600;
 }
 
-.footer-tagline {
-  font-family: var(--font-script);
-  font-size: 1.5rem;
-  color: var(--gold);
-  text-shadow: 0 2px 8px rgba(245,200,66,0.15);
-}
+
 
 /* Section-level decorative flowers */
 .section-flower {
@@ -1150,11 +1123,6 @@ h2 {
     border-right-width: 4px !important;
   }
 
-  .disco-glow {
-    bottom: 8%;
-    height: 40px;
-  }
-
   .info-cards {
     padding: 2.5rem 1.25rem;
   }
@@ -1177,8 +1145,8 @@ h2 {
     opacity: 0.8;
   }
 
-  .deco-flower-1 { width: 70px; height: 70px; bottom: 14%; left: 5%; }
-  .deco-flower-2 { width: 65px; height: 65px; bottom: 16%; right: 5%; }
+  .deco-flower-1 { width: 70px; height: 70px; bottom: 14%; left: 8%; }
+  .deco-flower-2 { width: 65px; height: 65px; bottom: 16%; right: 8%; }
   .deco-flower-3 { width: 50px; height: 50px; bottom: 10%; }
   .deco-flower-4,
   .deco-flower-5,
