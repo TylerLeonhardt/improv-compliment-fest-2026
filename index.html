@@ -12,38 +12,178 @@
 </head>
 <body>
 
-  <!-- Floating decorations -->
-  <div class="floating-decorations" aria-hidden="true">
-    <span class="floater floater-1">✨</span>
-    <span class="floater floater-2">🎵</span>
-    <span class="floater floater-3">✨</span>
-    <span class="floater floater-4">🌸</span>
-    <span class="floater floater-5">🎵</span>
-    <span class="floater floater-6">✨</span>
-    <span class="floater floater-7">🌼</span>
-    <span class="floater floater-8">🎵</span>
-  </div>
-
   <!-- Hero Section -->
   <header class="hero">
+    <div class="hero-bg-shapes" aria-hidden="true">
+      <div class="bg-circle bg-circle-1"></div>
+      <div class="bg-circle bg-circle-2"></div>
+      <div class="bg-circle bg-circle-3"></div>
+    </div>
+
     <div class="rainbow-arc" aria-hidden="true"></div>
+
+    <!-- Disco Ball with SVG -->
+    <div class="disco-ball-wrapper" aria-hidden="true">
+      <div class="disco-string"></div>
+      <div class="disco-ball">
+        <div class="disco-light-rays">
+          <div class="ray ray-1"></div>
+          <div class="ray ray-2"></div>
+          <div class="ray ray-3"></div>
+          <div class="ray ray-4"></div>
+          <div class="ray ray-5"></div>
+          <div class="ray ray-6"></div>
+        </div>
+        <svg viewBox="0 0 140 140" class="disco-svg" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="ball-clip">
+              <circle cx="70" cy="70" r="68"/>
+            </clipPath>
+            <radialGradient id="ball-shading" cx="35%" cy="30%" r="65%">
+              <stop offset="0%" stop-color="rgba(255,255,255,0.6)"/>
+              <stop offset="40%" stop-color="rgba(255,255,255,0.1)"/>
+              <stop offset="100%" stop-color="rgba(0,0,0,0.35)"/>
+            </radialGradient>
+            <radialGradient id="ball-base" cx="40%" cy="35%" r="60%">
+              <stop offset="0%" stop-color="#f0f0f0"/>
+              <stop offset="50%" stop-color="#d8d8d8"/>
+              <stop offset="100%" stop-color="#a8a8a8"/>
+            </radialGradient>
+          </defs>
+          <!-- Base sphere -->
+          <circle cx="70" cy="70" r="68" fill="url(#ball-base)"/>
+          <!-- Faceted mirror tiles -->
+          <g clip-path="url(#ball-clip)">
+            <!-- Row 1 -->
+            <rect x="8" y="6" width="11" height="9" rx="1" fill="#e8e8e8" opacity="0.5"/>
+            <rect x="22" y="6" width="11" height="9" rx="1" fill="#F5C842" opacity="0.35"/>
+            <rect x="36" y="6" width="11" height="9" rx="1" fill="#e0e0e0" opacity="0.4"/>
+            <rect x="50" y="6" width="11" height="9" rx="1" fill="#E84B8A" opacity="0.25"/>
+            <rect x="64" y="6" width="11" height="9" rx="1" fill="#eaeaea" opacity="0.5"/>
+            <rect x="78" y="6" width="11" height="9" rx="1" fill="#d5d5d5" opacity="0.3"/>
+            <rect x="92" y="6" width="11" height="9" rx="1" fill="#7EC8E3" opacity="0.3"/>
+            <rect x="106" y="6" width="11" height="9" rx="1" fill="#e2e2e2" opacity="0.45"/>
+            <rect x="120" y="6" width="11" height="9" rx="1" fill="#d0d0d0" opacity="0.3"/>
+            <!-- Row 2 -->
+            <rect x="5" y="18" width="11" height="9" rx="1" fill="#7EC8E3" opacity="0.3"/>
+            <rect x="19" y="18" width="11" height="9" rx="1" fill="#f2f2f2" opacity="0.7"/>
+            <rect x="33" y="18" width="11" height="9" rx="1" fill="#F5C842" opacity="0.4"/>
+            <rect x="47" y="18" width="11" height="9" rx="1" fill="#e8e8e8" opacity="0.55"/>
+            <rect x="61" y="18" width="11" height="9" rx="1" fill="#E84B8A" opacity="0.3"/>
+            <rect x="75" y="18" width="11" height="9" rx="1" fill="#f5f5f5" opacity="0.65"/>
+            <rect x="89" y="18" width="11" height="9" rx="1" fill="#d8d8d8" opacity="0.4"/>
+            <rect x="103" y="18" width="11" height="9" rx="1" fill="#F5A623" opacity="0.3"/>
+            <rect x="117" y="18" width="11" height="9" rx="1" fill="#e5e5e5" opacity="0.5"/>
+            <!-- Row 3 -->
+            <rect x="3" y="30" width="11" height="9" rx="1" fill="#e0e0e0" opacity="0.45"/>
+            <rect x="17" y="30" width="11" height="9" rx="1" fill="#E84B8A" opacity="0.35"/>
+            <rect x="31" y="30" width="11" height="9" rx="1" fill="#f8f8f8" opacity="0.8"/>
+            <rect x="45" y="30" width="11" height="9" rx="1" fill="#d0d0d0" opacity="0.4"/>
+            <rect x="59" y="30" width="11" height="9" rx="1" fill="#F5C842" opacity="0.45"/>
+            <rect x="73" y="30" width="11" height="9" rx="1" fill="#eaeaea" opacity="0.55"/>
+            <rect x="87" y="30" width="11" height="9" rx="1" fill="#7EC8E3" opacity="0.35"/>
+            <rect x="101" y="30" width="11" height="9" rx="1" fill="#f0f0f0" opacity="0.6"/>
+            <rect x="115" y="30" width="11" height="9" rx="1" fill="#d5d5d5" opacity="0.35"/>
+            <!-- Row 4 -->
+            <rect x="2" y="42" width="11" height="9" rx="1" fill="#F5A623" opacity="0.3"/>
+            <rect x="16" y="42" width="11" height="9" rx="1" fill="#e5e5e5" opacity="0.5"/>
+            <rect x="30" y="42" width="11" height="9" rx="1" fill="#5CB85C" opacity="0.3"/>
+            <rect x="44" y="42" width="11" height="9" rx="1" fill="#f5f5f5" opacity="0.75"/>
+            <rect x="58" y="42" width="11" height="9" rx="1" fill="#e0e0e0" opacity="0.5"/>
+            <rect x="72" y="42" width="11" height="9" rx="1" fill="#F5C842" opacity="0.4"/>
+            <rect x="86" y="42" width="11" height="9" rx="1" fill="#E84B8A" opacity="0.3"/>
+            <rect x="100" y="42" width="11" height="9" rx="1" fill="#ececec" opacity="0.55"/>
+            <rect x="114" y="42" width="11" height="9" rx="1" fill="#d8d8d8" opacity="0.4"/>
+            <rect x="128" y="42" width="11" height="9" rx="1" fill="#e0e0e0" opacity="0.3"/>
+            <!-- Row 5 -->
+            <rect x="1" y="54" width="11" height="9" rx="1" fill="#d5d5d5" opacity="0.4"/>
+            <rect x="15" y="54" width="11" height="9" rx="1" fill="#F5C842" opacity="0.35"/>
+            <rect x="29" y="54" width="11" height="9" rx="1" fill="#efefef" opacity="0.6"/>
+            <rect x="43" y="54" width="11" height="9" rx="1" fill="#E84B8A" opacity="0.3"/>
+            <rect x="57" y="54" width="11" height="9" rx="1" fill="#f2f2f2" opacity="0.65"/>
+            <rect x="71" y="54" width="11" height="9" rx="1" fill="#d0d0d0" opacity="0.45"/>
+            <rect x="85" y="54" width="11" height="9" rx="1" fill="#F5A623" opacity="0.35"/>
+            <rect x="99" y="54" width="11" height="9" rx="1" fill="#e8e8e8" opacity="0.5"/>
+            <rect x="113" y="54" width="11" height="9" rx="1" fill="#7EC8E3" opacity="0.3"/>
+            <rect x="127" y="54" width="11" height="9" rx="1" fill="#e2e2e2" opacity="0.4"/>
+            <!-- Row 6 -->
+            <rect x="1" y="66" width="11" height="9" rx="1" fill="#7EC8E3" opacity="0.35"/>
+            <rect x="15" y="66" width="11" height="9" rx="1" fill="#e2e2e2" opacity="0.5"/>
+            <rect x="29" y="66" width="11" height="9" rx="1" fill="#F5C842" opacity="0.4"/>
+            <rect x="43" y="66" width="11" height="9" rx="1" fill="#f0f0f0" opacity="0.55"/>
+            <rect x="57" y="66" width="11" height="9" rx="1" fill="#5CB85C" opacity="0.25"/>
+            <rect x="71" y="66" width="11" height="9" rx="1" fill="#eaeaea" opacity="0.6"/>
+            <rect x="85" y="66" width="11" height="9" rx="1" fill="#E84B8A" opacity="0.35"/>
+            <rect x="99" y="66" width="11" height="9" rx="1" fill="#d5d5d5" opacity="0.45"/>
+            <rect x="113" y="66" width="11" height="9" rx="1" fill="#f5f5f5" opacity="0.5"/>
+            <rect x="127" y="66" width="11" height="9" rx="1" fill="#d8d8d8" opacity="0.35"/>
+            <!-- Row 7 -->
+            <rect x="2" y="78" width="11" height="9" rx="1" fill="#E84B8A" opacity="0.3"/>
+            <rect x="16" y="78" width="11" height="9" rx="1" fill="#d8d8d8" opacity="0.45"/>
+            <rect x="30" y="78" width="11" height="9" rx="1" fill="#f2f2f2" opacity="0.6"/>
+            <rect x="44" y="78" width="11" height="9" rx="1" fill="#F5A623" opacity="0.3"/>
+            <rect x="58" y="78" width="11" height="9" rx="1" fill="#e5e5e5" opacity="0.5"/>
+            <rect x="72" y="78" width="11" height="9" rx="1" fill="#F5C842" opacity="0.35"/>
+            <rect x="86" y="78" width="11" height="9" rx="1" fill="#f0f0f0" opacity="0.55"/>
+            <rect x="100" y="78" width="11" height="9" rx="1" fill="#7EC8E3" opacity="0.3"/>
+            <rect x="114" y="78" width="11" height="9" rx="1" fill="#d0d0d0" opacity="0.4"/>
+            <rect x="128" y="78" width="11" height="9" rx="1" fill="#e8e8e8" opacity="0.45"/>
+            <!-- Row 8 -->
+            <rect x="3" y="90" width="11" height="9" rx="1" fill="#f5f5f5" opacity="0.5"/>
+            <rect x="17" y="90" width="11" height="9" rx="1" fill="#F5C842" opacity="0.35"/>
+            <rect x="31" y="90" width="11" height="9" rx="1" fill="#d5d5d5" opacity="0.4"/>
+            <rect x="45" y="90" width="11" height="9" rx="1" fill="#e0e0e0" opacity="0.45"/>
+            <rect x="59" y="90" width="11" height="9" rx="1" fill="#E84B8A" opacity="0.3"/>
+            <rect x="73" y="90" width="11" height="9" rx="1" fill="#ececec" opacity="0.55"/>
+            <rect x="87" y="90" width="11" height="9" rx="1" fill="#F5A623" opacity="0.3"/>
+            <rect x="101" y="90" width="11" height="9" rx="1" fill="#e8e8e8" opacity="0.5"/>
+            <rect x="115" y="90" width="11" height="9" rx="1" fill="#d8d8d8" opacity="0.35"/>
+            <!-- Row 9 -->
+            <rect x="5" y="102" width="11" height="9" rx="1" fill="#d0d0d0" opacity="0.4"/>
+            <rect x="19" y="102" width="11" height="9" rx="1" fill="#eaeaea" opacity="0.5"/>
+            <rect x="33" y="102" width="11" height="9" rx="1" fill="#7EC8E3" opacity="0.3"/>
+            <rect x="47" y="102" width="11" height="9" rx="1" fill="#f2f2f2" opacity="0.55"/>
+            <rect x="61" y="102" width="11" height="9" rx="1" fill="#F5C842" opacity="0.35"/>
+            <rect x="75" y="102" width="11" height="9" rx="1" fill="#e5e5e5" opacity="0.45"/>
+            <rect x="89" y="102" width="11" height="9" rx="1" fill="#E84B8A" opacity="0.25"/>
+            <rect x="103" y="102" width="11" height="9" rx="1" fill="#d5d5d5" opacity="0.4"/>
+            <rect x="117" y="102" width="11" height="9" rx="1" fill="#f0f0f0" opacity="0.5"/>
+            <!-- Row 10 -->
+            <rect x="8" y="114" width="11" height="9" rx="1" fill="#e2e2e2" opacity="0.4"/>
+            <rect x="22" y="114" width="11" height="9" rx="1" fill="#F5A623" opacity="0.25"/>
+            <rect x="36" y="114" width="11" height="9" rx="1" fill="#e8e8e8" opacity="0.45"/>
+            <rect x="50" y="114" width="11" height="9" rx="1" fill="#d0d0d0" opacity="0.35"/>
+            <rect x="64" y="114" width="11" height="9" rx="1" fill="#f5f5f5" opacity="0.5"/>
+            <rect x="78" y="114" width="11" height="9" rx="1" fill="#5CB85C" opacity="0.25"/>
+            <rect x="92" y="114" width="11" height="9" rx="1" fill="#e0e0e0" opacity="0.4"/>
+            <rect x="106" y="114" width="11" height="9" rx="1" fill="#F5C842" opacity="0.3"/>
+            <rect x="120" y="114" width="11" height="9" rx="1" fill="#d8d8d8" opacity="0.35"/>
+            <!-- Row 11 -->
+            <rect x="14" y="126" width="11" height="9" rx="1" fill="#E84B8A" opacity="0.25"/>
+            <rect x="28" y="126" width="11" height="9" rx="1" fill="#d5d5d5" opacity="0.35"/>
+            <rect x="42" y="126" width="11" height="9" rx="1" fill="#ececec" opacity="0.45"/>
+            <rect x="56" y="126" width="11" height="9" rx="1" fill="#F5C842" opacity="0.3"/>
+            <rect x="70" y="126" width="11" height="9" rx="1" fill="#e0e0e0" opacity="0.4"/>
+            <rect x="84" y="126" width="11" height="9" rx="1" fill="#f2f2f2" opacity="0.5"/>
+            <rect x="98" y="126" width="11" height="9" rx="1" fill="#7EC8E3" opacity="0.25"/>
+            <rect x="112" y="126" width="11" height="9" rx="1" fill="#e5e5e5" opacity="0.35"/>
+          </g>
+          <!-- 3D shading overlay -->
+          <circle cx="70" cy="70" r="68" fill="url(#ball-shading)"/>
+          <!-- Highlight spot -->
+          <ellipse cx="42" cy="38" rx="18" ry="14" fill="white" opacity="0.25" filter="url(#blur-highlight)"/>
+          <defs>
+            <filter id="blur-highlight">
+              <feGaussianBlur stdDeviation="4"/>
+            </filter>
+          </defs>
+        </svg>
+      </div>
+    </div>
 
     <div class="cloud-bubbles">
       <div class="cloud cloud-left">Save the Date!</div>
       <div class="cloud cloud-right">Yes and...!</div>
-    </div>
-
-    <div class="disco-ball" aria-hidden="true">
-      <div class="disco-ball-inner">
-        <div class="disco-tile"></div><div class="disco-tile"></div><div class="disco-tile"></div>
-        <div class="disco-tile"></div><div class="disco-tile"></div><div class="disco-tile"></div>
-        <div class="disco-tile"></div><div class="disco-tile"></div><div class="disco-tile"></div>
-        <div class="disco-tile"></div><div class="disco-tile"></div><div class="disco-tile"></div>
-        <div class="disco-tile"></div><div class="disco-tile"></div><div class="disco-tile"></div>
-        <div class="disco-tile"></div>
-      </div>
-      <div class="disco-string"></div>
-      <div class="disco-shine"></div>
     </div>
 
     <div class="hero-content">
@@ -54,61 +194,126 @@
       <p class="subtitle">An Improvised Improv Festival</p>
     </div>
 
-    <!-- Decorative flowers -->
-    <div class="flower flower-1" aria-hidden="true">
-      <div class="petal"></div><div class="petal"></div><div class="petal"></div>
-      <div class="petal"></div><div class="petal"></div><div class="petal"></div>
-      <div class="flower-center"></div>
+    <!-- SVG Decorative flowers -->
+    <div class="deco-flower deco-flower-1" aria-hidden="true">
+      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="30" cy="12" rx="10" ry="14" fill="var(--pink)" opacity="0.85"/>
+        <ellipse cx="30" cy="12" rx="10" ry="14" fill="var(--pink)" opacity="0.85" transform="rotate(60 30 30)"/>
+        <ellipse cx="30" cy="12" rx="10" ry="14" fill="var(--pink)" opacity="0.85" transform="rotate(120 30 30)"/>
+        <ellipse cx="30" cy="12" rx="10" ry="14" fill="var(--pink)" opacity="0.85" transform="rotate(180 30 30)"/>
+        <ellipse cx="30" cy="12" rx="10" ry="14" fill="var(--pink)" opacity="0.85" transform="rotate(240 30 30)"/>
+        <ellipse cx="30" cy="12" rx="10" ry="14" fill="var(--pink)" opacity="0.85" transform="rotate(300 30 30)"/>
+        <circle cx="30" cy="30" r="8" fill="var(--gold)"/>
+      </svg>
     </div>
-    <div class="flower flower-2" aria-hidden="true">
-      <div class="petal"></div><div class="petal"></div><div class="petal"></div>
-      <div class="petal"></div><div class="petal"></div><div class="petal"></div>
-      <div class="flower-center"></div>
+    <div class="deco-flower deco-flower-2" aria-hidden="true">
+      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="30" cy="12" rx="10" ry="14" fill="var(--gold)" opacity="0.85"/>
+        <ellipse cx="30" cy="12" rx="10" ry="14" fill="var(--gold)" opacity="0.85" transform="rotate(72 30 30)"/>
+        <ellipse cx="30" cy="12" rx="10" ry="14" fill="var(--gold)" opacity="0.85" transform="rotate(144 30 30)"/>
+        <ellipse cx="30" cy="12" rx="10" ry="14" fill="var(--gold)" opacity="0.85" transform="rotate(216 30 30)"/>
+        <ellipse cx="30" cy="12" rx="10" ry="14" fill="var(--gold)" opacity="0.85" transform="rotate(288 30 30)"/>
+        <circle cx="30" cy="30" r="7" fill="var(--brown)"/>
+      </svg>
     </div>
-    <div class="flower flower-3" aria-hidden="true">
-      <div class="petal"></div><div class="petal"></div><div class="petal"></div>
-      <div class="petal"></div><div class="petal"></div><div class="petal"></div>
-      <div class="flower-center"></div>
+    <div class="deco-flower deco-flower-3" aria-hidden="true">
+      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="30" cy="14" rx="8" ry="12" fill="var(--orange)" opacity="0.8"/>
+        <ellipse cx="30" cy="14" rx="8" ry="12" fill="var(--orange)" opacity="0.8" transform="rotate(60 30 30)"/>
+        <ellipse cx="30" cy="14" rx="8" ry="12" fill="var(--orange)" opacity="0.8" transform="rotate(120 30 30)"/>
+        <ellipse cx="30" cy="14" rx="8" ry="12" fill="var(--orange)" opacity="0.8" transform="rotate(180 30 30)"/>
+        <ellipse cx="30" cy="14" rx="8" ry="12" fill="var(--orange)" opacity="0.8" transform="rotate(240 30 30)"/>
+        <ellipse cx="30" cy="14" rx="8" ry="12" fill="var(--orange)" opacity="0.8" transform="rotate(300 30 30)"/>
+        <circle cx="30" cy="30" r="6" fill="var(--pink)"/>
+      </svg>
     </div>
 
-    <div class="hero-stars" aria-hidden="true">
-      <span class="star star-1">★</span>
-      <span class="star star-2">★</span>
-      <span class="star star-3">★</span>
-      <span class="star star-4">★</span>
-      <span class="star star-5">★</span>
+    <!-- Decorative sparkles (CSS clip-path stars) -->
+    <div class="sparkle sparkle-1" aria-hidden="true"></div>
+    <div class="sparkle sparkle-2" aria-hidden="true"></div>
+    <div class="sparkle sparkle-3" aria-hidden="true"></div>
+    <div class="sparkle sparkle-4" aria-hidden="true"></div>
+    <div class="sparkle sparkle-5" aria-hidden="true"></div>
+
+    <!-- SVG Musical notes -->
+    <svg class="music-note music-note-1" aria-hidden="true" viewBox="0 0 24 30" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 4v18c0 0-5 0-5 4s5 4 5 0V10l12-4v12c0 0-5 0-5 4s5 4 5 0V2L8 4z" fill="var(--gold)" opacity="0.35"/>
+    </svg>
+    <svg class="music-note music-note-2" aria-hidden="true" viewBox="0 0 16 28" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 2v20c0 0-4 0-4 3s4 3 4 0V8l8-3v14c0 0-4 0-4 3s4 3 4 0V2L4 2z" fill="var(--pink)" opacity="0.3"/>
+    </svg>
+
+    <!-- Grass/ground at hero bottom -->
+    <div class="hero-ground" aria-hidden="true">
+      <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,60 C120,20 240,90 360,50 C480,10 600,80 720,40 C840,0 960,70 1080,30 C1200,0 1320,50 1440,20 L1440,120 L0,120 Z" fill="var(--green)" opacity="0.35"/>
+        <path d="M0,80 C160,50 320,100 480,65 C640,30 800,90 960,55 C1120,20 1280,75 1440,45 L1440,120 L0,120 Z" fill="var(--green)" opacity="0.5"/>
+        <path d="M0,95 C180,75 360,110 540,85 C720,60 900,100 1080,80 C1260,60 1380,90 1440,75 L1440,120 L0,120 Z" fill="var(--green)" opacity="0.7"/>
+      </svg>
     </div>
   </header>
 
   <!-- Info Cards -->
   <section class="info-cards">
     <div class="card card-date">
-      <span class="card-icon">📅</span>
+      <div class="card-accent"></div>
+      <span class="card-icon">
+        <svg viewBox="0 0 32 32" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="6" width="24" height="22" rx="3" fill="none" stroke="var(--pink)" stroke-width="2"/>
+          <line x1="4" y1="12" x2="28" y2="12" stroke="var(--pink)" stroke-width="2"/>
+          <line x1="10" y1="3" x2="10" y2="9" stroke="var(--pink)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="22" y1="3" x2="22" y2="9" stroke="var(--pink)" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="16" cy="20" r="3" fill="var(--pink)"/>
+        </svg>
+      </span>
       <span class="card-label">When</span>
       <span class="card-value">30 AUG 2026</span>
       <span class="card-detail">Sunday · 1–5 PM</span>
     </div>
     <div class="card card-location">
-      <span class="card-icon">📍</span>
+      <div class="card-accent"></div>
+      <span class="card-icon">
+        <svg viewBox="0 0 32 32" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 3C10.5 3 6 7.5 6 13c0 7 10 16 10 16s10-9 10-16c0-5.5-4.5-10-10-10z" fill="none" stroke="var(--gold)" stroke-width="2"/>
+          <circle cx="16" cy="13" r="4" fill="var(--gold)"/>
+        </svg>
+      </span>
       <span class="card-label">Where</span>
       <span class="card-value">Dr. Blanche Lavizzo Park</span>
       <span class="card-detail">Central District, Seattle</span>
     </div>
-    <div class="card card-time">
-      <span class="card-icon">🎟️</span>
+    <div class="card card-price">
+      <div class="card-accent"></div>
+      <span class="card-icon">
+        <svg viewBox="0 0 32 32" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="8" width="28" height="18" rx="3" fill="none" stroke="var(--green)" stroke-width="2"/>
+          <rect x="2" y="8" width="28" height="6" rx="3" fill="var(--green)" opacity="0.2"/>
+          <circle cx="16" cy="20" r="2" fill="var(--green)"/>
+          <line x1="8" y1="14" x2="8" y2="14.01" stroke="var(--green)" stroke-width="3" stroke-linecap="round"/>
+          <line x1="24" y1="14" x2="24" y2="14.01" stroke="var(--green)" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </span>
       <span class="card-label">Price</span>
       <span class="card-value">FREE!</span>
       <span class="card-detail">Optional donation welcome</span>
     </div>
   </section>
 
-  <!-- Checkerboard Divider -->
-  <div class="checkerboard-divider" aria-hidden="true"></div>
+  <!-- Wave Divider -->
+  <div class="wave-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,20 1440,30 L1440,60 L0,60 Z" fill="var(--gold-light)" opacity="0.5"/>
+      <path d="M0,35 C240,10 480,55 720,30 C960,5 1200,50 1440,25 L1440,60 L0,60 Z" fill="var(--gold-light)" opacity="0.7"/>
+    </svg>
+  </div>
 
   <!-- About Section -->
-  <section class="about">
+  <section class="about" id="about">
     <div class="about-inner">
-      <h2>What is Compliment Fest?</h2>
+      <h2>
+        <span class="heading-text">What is Compliment Fest?</span>
+        <span class="heading-decoration" aria-hidden="true"></span>
+      </h2>
       <p class="about-lead">
         A cross between an <strong>open mic</strong> &amp; a <strong>festival</strong> — 
         built entirely by the community, for the community.
@@ -121,32 +326,73 @@
       </p>
       <p>
         Whether you're a seasoned performer or it's your very first time on stage — 
-        this is your moment. No auditions, no gatekeeping, just pure improvised joy. ✨
+        this is your moment. No auditions, no gatekeeping, just pure improvised joy.
       </p>
     </div>
   </section>
 
   <!-- How It Works -->
-  <section class="how-it-works">
-    <h2>How It Works</h2>
+  <section class="how-it-works" id="how">
+    <h2>
+      <span class="heading-text">How It Works</span>
+      <span class="heading-decoration" aria-hidden="true"></span>
+    </h2>
     <div class="steps">
-      <div class="step">
-        <div class="step-icon">💡</div>
+      <div class="step step-1">
+        <div class="step-number">1</div>
+        <div class="step-connector" aria-hidden="true"></div>
+        <div class="step-icon-wrap">
+          <svg viewBox="0 0 48 48" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" fill="var(--pink-light)" opacity="0.3"/>
+            <circle cx="24" cy="16" r="6" fill="none" stroke="var(--pink)" stroke-width="2"/>
+            <path d="M24 22 L24 34" stroke="var(--pink)" stroke-width="2"/>
+            <path d="M18 26 L24 22 L30 26" fill="none" stroke="var(--gold)" stroke-width="2"/>
+          </svg>
+        </div>
         <h3>Bring an Idea</h3>
         <p>Dream up a concept for a 20-minute improv set. Any format, any style — go wild!</p>
       </div>
-      <div class="step">
-        <div class="step-icon">👥</div>
+      <div class="step step-2">
+        <div class="step-number">2</div>
+        <div class="step-connector" aria-hidden="true"></div>
+        <div class="step-icon-wrap">
+          <svg viewBox="0 0 48 48" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" fill="var(--sky-light)" opacity="0.3"/>
+            <circle cx="18" cy="17" r="5" fill="none" stroke="var(--sky)" stroke-width="2"/>
+            <circle cx="30" cy="17" r="5" fill="none" stroke="var(--sky)" stroke-width="2"/>
+            <path d="M10 30 C10 24 16 22 18 22 C20 22 22 23 24 25 C26 23 28 22 30 22 C32 22 38 24 38 30" fill="none" stroke="var(--sky)" stroke-width="2"/>
+          </svg>
+        </div>
         <h3>Form a Team</h3>
         <p>Rally your crew ahead of time, or find your people right there at the fest. New friends welcome!</p>
       </div>
-      <div class="step">
-        <div class="step-icon">🎩</div>
+      <div class="step step-3">
+        <div class="step-number">3</div>
+        <div class="step-connector" aria-hidden="true"></div>
+        <div class="step-icon-wrap">
+          <svg viewBox="0 0 48 48" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" fill="var(--gold-light)" opacity="0.3"/>
+            <path d="M14 32 L14 14 C14 12 16 10 18 10 L30 10 C32 10 34 12 34 14 L34 32" fill="none" stroke="var(--gold)" stroke-width="2"/>
+            <ellipse cx="24" cy="32" rx="12" ry="4" fill="none" stroke="var(--gold)" stroke-width="2"/>
+            <path d="M20 18 L28 18 M20 22 L26 22" stroke="var(--orange)" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
         <h3>Into the Hat</h3>
         <p>Write your idea down and toss it in the hat. The magic of randomness takes over from here.</p>
       </div>
-      <div class="step">
-        <div class="step-icon">🎲</div>
+      <div class="step step-4">
+        <div class="step-number">4</div>
+        <div class="step-icon-wrap">
+          <svg viewBox="0 0 48 48" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" fill="var(--green-light)" opacity="0.3"/>
+            <rect x="12" y="12" width="24" height="24" rx="4" fill="none" stroke="var(--green)" stroke-width="2" transform="rotate(15 24 24)"/>
+            <circle cx="18" cy="20" r="2" fill="var(--green)"/>
+            <circle cx="30" cy="20" r="2" fill="var(--green)"/>
+            <circle cx="18" cy="28" r="2" fill="var(--green)"/>
+            <circle cx="30" cy="28" r="2" fill="var(--green)"/>
+            <circle cx="24" cy="24" r="2" fill="var(--green)"/>
+          </svg>
+        </div>
         <h3>Drawn at Random</h3>
         <p>Sets are pulled from the hat — fair chances for everyone. The lineup builds itself!</p>
       </div>
@@ -157,10 +403,47 @@
   <div class="rainbow-divider" aria-hidden="true"></div>
 
   <!-- Community Section -->
-  <section class="community">
+  <section class="community" id="community">
     <div class="community-inner">
-      <span class="community-emoji" aria-hidden="true">🪩</span>
-      <h2>Our Community</h2>
+      <div class="community-disco" aria-hidden="true">
+        <svg viewBox="0 0 80 80" width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="mini-ball" cx="35%" cy="30%" r="65%">
+              <stop offset="0%" stop-color="#f0f0f0"/>
+              <stop offset="100%" stop-color="#a8a8a8"/>
+            </radialGradient>
+          </defs>
+          <circle cx="40" cy="40" r="38" fill="url(#mini-ball)"/>
+          <rect x="12" y="15" width="8" height="6" rx="1" fill="var(--pink)" opacity="0.35"/>
+          <rect x="24" y="15" width="8" height="6" rx="1" fill="var(--gold)" opacity="0.4"/>
+          <rect x="36" y="15" width="8" height="6" rx="1" fill="var(--sky)" opacity="0.35"/>
+          <rect x="48" y="15" width="8" height="6" rx="1" fill="#e0e0e0" opacity="0.5"/>
+          <rect x="60" y="15" width="8" height="6" rx="1" fill="var(--orange)" opacity="0.3"/>
+          <rect x="10" y="25" width="8" height="6" rx="1" fill="#e8e8e8" opacity="0.45"/>
+          <rect x="22" y="25" width="8" height="6" rx="1" fill="var(--pink)" opacity="0.3"/>
+          <rect x="34" y="25" width="8" height="6" rx="1" fill="#f0f0f0" opacity="0.6"/>
+          <rect x="46" y="25" width="8" height="6" rx="1" fill="var(--gold)" opacity="0.35"/>
+          <rect x="58" y="25" width="8" height="6" rx="1" fill="#d5d5d5" opacity="0.4"/>
+          <rect x="12" y="35" width="8" height="6" rx="1" fill="var(--sky)" opacity="0.3"/>
+          <rect x="24" y="35" width="8" height="6" rx="1" fill="#e5e5e5" opacity="0.5"/>
+          <rect x="36" y="35" width="8" height="6" rx="1" fill="var(--orange)" opacity="0.35"/>
+          <rect x="48" y="35" width="8" height="6" rx="1" fill="#eaeaea" opacity="0.45"/>
+          <rect x="60" y="35" width="8" height="6" rx="1" fill="var(--pink)" opacity="0.3"/>
+          <rect x="14" y="45" width="8" height="6" rx="1" fill="var(--gold)" opacity="0.35"/>
+          <rect x="26" y="45" width="8" height="6" rx="1" fill="#d8d8d8" opacity="0.4"/>
+          <rect x="38" y="45" width="8" height="6" rx="1" fill="var(--sky)" opacity="0.3"/>
+          <rect x="50" y="45" width="8" height="6" rx="1" fill="#f2f2f2" opacity="0.5"/>
+          <rect x="16" y="55" width="8" height="6" rx="1" fill="#e0e0e0" opacity="0.4"/>
+          <rect x="28" y="55" width="8" height="6" rx="1" fill="var(--pink)" opacity="0.3"/>
+          <rect x="40" y="55" width="8" height="6" rx="1" fill="var(--gold)" opacity="0.35"/>
+          <rect x="52" y="55" width="8" height="6" rx="1" fill="#d5d5d5" opacity="0.4"/>
+          <circle cx="40" cy="40" r="38" fill="url(#ball-shading)" opacity="0.5"/>
+        </svg>
+      </div>
+      <h2>
+        <span class="heading-text">Our Community</span>
+        <span class="heading-decoration" aria-hidden="true"></span>
+      </h2>
       <p class="community-number">300+</p>
       <p class="community-label">Compliment Circle Discord Members</p>
       <p class="community-text">
@@ -168,19 +451,67 @@
         vibrant community of over 300 creative souls. Compliment Fest is our celebration — 
         a day to come together, play together, and lift each other up.
       </p>
-      <p class="community-tagline">Yes and...! 🌈</p>
+      <p class="community-tagline">Yes and...!</p>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="footer-flowers" aria-hidden="true">
-      <span>🌸</span><span>🌼</span><span>🌸</span><span>🌼</span><span>🌸</span>
+    <div class="footer-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,20 1440,40 L1440,0 L0,0 Z" fill="var(--cream)"/>
+      </svg>
     </div>
-    <p class="footer-title">Compliment Fest!! 🪩</p>
-    <p class="footer-subtitle">An Improvised Improv Festival</p>
-    <p class="footer-date">August 30, 2026 · Seattle, WA</p>
-    <p class="footer-tagline">Yes and...! ✨</p>
+    <div class="footer-inner">
+      <div class="footer-deco" aria-hidden="true">
+        <svg class="footer-flower" viewBox="0 0 40 40" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="20" cy="8" rx="7" ry="10" fill="var(--pink-light)" opacity="0.6"/>
+          <ellipse cx="20" cy="8" rx="7" ry="10" fill="var(--pink-light)" opacity="0.6" transform="rotate(72 20 20)"/>
+          <ellipse cx="20" cy="8" rx="7" ry="10" fill="var(--pink-light)" opacity="0.6" transform="rotate(144 20 20)"/>
+          <ellipse cx="20" cy="8" rx="7" ry="10" fill="var(--pink-light)" opacity="0.6" transform="rotate(216 20 20)"/>
+          <ellipse cx="20" cy="8" rx="7" ry="10" fill="var(--pink-light)" opacity="0.6" transform="rotate(288 20 20)"/>
+          <circle cx="20" cy="20" r="5" fill="var(--gold)" opacity="0.7"/>
+        </svg>
+        <svg class="footer-flower" viewBox="0 0 40 40" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="20" cy="9" rx="6" ry="9" fill="var(--gold-light)" opacity="0.6"/>
+          <ellipse cx="20" cy="9" rx="6" ry="9" fill="var(--gold-light)" opacity="0.6" transform="rotate(60 20 20)"/>
+          <ellipse cx="20" cy="9" rx="6" ry="9" fill="var(--gold-light)" opacity="0.6" transform="rotate(120 20 20)"/>
+          <ellipse cx="20" cy="9" rx="6" ry="9" fill="var(--gold-light)" opacity="0.6" transform="rotate(180 20 20)"/>
+          <ellipse cx="20" cy="9" rx="6" ry="9" fill="var(--gold-light)" opacity="0.6" transform="rotate(240 20 20)"/>
+          <ellipse cx="20" cy="9" rx="6" ry="9" fill="var(--gold-light)" opacity="0.6" transform="rotate(300 20 20)"/>
+          <circle cx="20" cy="20" r="4" fill="var(--pink-light)" opacity="0.7"/>
+        </svg>
+        <svg class="footer-flower" viewBox="0 0 40 40" width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="20" cy="9" rx="6" ry="9" fill="var(--pink-light)" opacity="0.6"/>
+          <ellipse cx="20" cy="9" rx="6" ry="9" fill="var(--pink-light)" opacity="0.6" transform="rotate(72 20 20)"/>
+          <ellipse cx="20" cy="9" rx="6" ry="9" fill="var(--pink-light)" opacity="0.6" transform="rotate(144 20 20)"/>
+          <ellipse cx="20" cy="9" rx="6" ry="9" fill="var(--pink-light)" opacity="0.6" transform="rotate(216 20 20)"/>
+          <ellipse cx="20" cy="9" rx="6" ry="9" fill="var(--pink-light)" opacity="0.6" transform="rotate(288 20 20)"/>
+          <circle cx="20" cy="20" r="5" fill="var(--gold)" opacity="0.7"/>
+        </svg>
+        <svg class="footer-flower" viewBox="0 0 40 40" width="26" height="26" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="20" cy="9" rx="6" ry="9" fill="var(--gold-light)" opacity="0.6"/>
+          <ellipse cx="20" cy="9" rx="6" ry="9" fill="var(--gold-light)" opacity="0.6" transform="rotate(60 20 20)"/>
+          <ellipse cx="20" cy="9" rx="6" ry="9" fill="var(--gold-light)" opacity="0.6" transform="rotate(120 20 20)"/>
+          <ellipse cx="20" cy="9" rx="6" ry="9" fill="var(--gold-light)" opacity="0.6" transform="rotate(180 20 20)"/>
+          <ellipse cx="20" cy="9" rx="6" ry="9" fill="var(--gold-light)" opacity="0.6" transform="rotate(240 20 20)"/>
+          <ellipse cx="20" cy="9" rx="6" ry="9" fill="var(--gold-light)" opacity="0.6" transform="rotate(300 20 20)"/>
+          <circle cx="20" cy="20" r="4" fill="var(--pink-light)" opacity="0.7"/>
+        </svg>
+        <svg class="footer-flower" viewBox="0 0 40 40" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="20" cy="8" rx="7" ry="10" fill="var(--pink-light)" opacity="0.6"/>
+          <ellipse cx="20" cy="8" rx="7" ry="10" fill="var(--pink-light)" opacity="0.6" transform="rotate(72 20 20)"/>
+          <ellipse cx="20" cy="8" rx="7" ry="10" fill="var(--pink-light)" opacity="0.6" transform="rotate(144 20 20)"/>
+          <ellipse cx="20" cy="8" rx="7" ry="10" fill="var(--pink-light)" opacity="0.6" transform="rotate(216 20 20)"/>
+          <ellipse cx="20" cy="8" rx="7" ry="10" fill="var(--pink-light)" opacity="0.6" transform="rotate(288 20 20)"/>
+          <circle cx="20" cy="20" r="5" fill="var(--gold)" opacity="0.7"/>
+        </svg>
+      </div>
+      <p class="footer-title">Compliment Fest!!</p>
+      <p class="footer-subtitle">An Improvised Improv Festival</p>
+      <p class="footer-date">August 30, 2026 · Seattle, WA</p>
+      <p class="footer-tagline">Yes and...!</p>
+    </div>
   </footer>
 
 </body>
