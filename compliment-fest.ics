@@ -1,0 +1,12 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Compliment Fest//EN
+BEGIN:VEVENT
+DTSTART:20260830T200000Z
+DTEND:20260831T000000Z
+SUMMARY:Compliment Fest!! — An Improvised Improv Festival
+DESCRIPTION:A cross between an open mic & a festival. Show up with an idea for a 20-minute improv set\, compile a team\, and put your idea in a hat. The festival itinerary will be built at random!
+LOCATION:Dr. Blanche Lavizzo Park Amphitheatre\, Central District\, Seattle\, WA
+URL:https://tylerleonhardt.github.io/improv-compliment-fest-2026/
+END:VEVENT
+END:VCALENDAR
