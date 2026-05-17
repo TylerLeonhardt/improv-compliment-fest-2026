@@ -1310,6 +1310,32 @@ h2 {
   }
 }
 
+/* ---------- Card actions (calendar links) ---------- */
+.card-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-action-link {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--brown);
+  text-decoration: underline;
+  text-decoration-color: var(--brown);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 2px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.card-action-link:hover {
+  opacity: 1;
+}
+
 /* ---------- Accessibility: reduce motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   *,
