@@ -712,6 +712,20 @@ h2 {
   font-weight: 600;
 }
 
+.venue-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--brown);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.venue-link:hover,
+.venue-link:focus {
+  text-decoration-color: var(--gold);
+}
+
 /* ========================================
    WAVE DIVIDER — Smooth transition
    ======================================== */
