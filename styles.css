@@ -343,13 +343,14 @@ h2 {
   content: '';
   position: absolute;
   background: white;
+  border: 2.5px solid var(--brown);
   border-radius: 50%;
 }
 
-.cloud-left::before  { width: 18px; height: 18px; bottom: -5px; left: 25%; }
-.cloud-left::after   { width: 10px; height: 10px; bottom: -10px; left: 35%; }
-.cloud-right::before { width: 18px; height: 18px; bottom: -5px; right: 25%; }
-.cloud-right::after  { width: 10px; height: 10px; bottom: -10px; right: 35%; }
+.cloud-left::before  { width: 16px; height: 16px; bottom: -12px; left: 30%; }
+.cloud-left::after   { width: 10px; height: 10px; bottom: -22px; left: 25%; }
+.cloud-right::before { width: 16px; height: 16px; bottom: -12px; right: 30%; }
+.cloud-right::after  { width: 10px; height: 10px; bottom: -22px; right: 25%; }
 
 .cloud-right { animation-delay: 1.5s; }
 
@@ -559,7 +560,7 @@ h2 {
 .music-note-2 {
   width: 50px;
   top: 40%;
-  left: 10%;
+  left: 22%;
 }
 
 
