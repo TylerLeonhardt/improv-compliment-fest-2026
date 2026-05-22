@@ -319,7 +319,7 @@ h2 {
 /* ---------- Cloud Bubbles ---------- */
 .cloud-bubbles {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: min(560px, 85vw);
   margin-bottom: 1.5rem;
   z-index: 2;
@@ -348,8 +348,6 @@ h2 {
   border-radius: 50%;
 }
 
-.cloud-left::before  { width: 16px; height: 16px; bottom: -12px; left: 30%; }
-.cloud-left::after   { width: 10px; height: 10px; bottom: -22px; left: 25%; }
 .cloud-right::before { width: 16px; height: 16px; bottom: -12px; right: 30%; }
 .cloud-right::after  { width: 10px; height: 10px; bottom: -22px; right: 25%; }
 
