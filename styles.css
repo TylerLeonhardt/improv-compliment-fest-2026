@@ -51,7 +51,7 @@ html {
 
 body {
   font-family: var(--font-body);
-  font-size: 1.125rem;
+  font-size: 1.35rem;
   color: var(--brown);
   background: var(--cream);
   overflow-x: hidden;
@@ -708,7 +708,7 @@ h2 {
 .card-detail {
   position: relative;
   z-index: 1;
-  font-size: 1.05rem;
+  font-size: 1.25rem;
   color: var(--brown);
   font-weight: 600;
 }
@@ -771,7 +771,7 @@ h2 {
 }
 
 .about-lead {
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   font-weight: 700;
   margin-bottom: 1.2rem;
   line-height: 1.6;
@@ -779,7 +779,7 @@ h2 {
 
 .about p {
   margin-bottom: 1.2rem;
-  font-size: 1.2rem;
+  font-size: 1.45rem;
 }
 
 .about p:last-child {
@@ -873,7 +873,7 @@ h2 {
 }
 
 .step p {
-  font-size: 1.05rem;
+  font-size: 1.25rem;
   line-height: 1.6;
 }
 
@@ -960,7 +960,7 @@ h2 {
 }
 
 .community-text {
-  font-size: 1.2rem;
+  font-size: 1.45rem;
   margin-bottom: 1.8rem;
   line-height: 1.8;
 }
@@ -1041,7 +1041,7 @@ h2 {
 }
 
 .footer-date {
-  font-size: 1.15rem;
+  font-size: 1.4rem;
   color: var(--cream);
   margin-bottom: 1.2rem;
   letter-spacing: 0.04em;
