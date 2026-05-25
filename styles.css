@@ -217,6 +217,7 @@ h2 {
 
 .disco-ball {
   position: relative;
+  top: -5px;
   width: 180px;
   height: 180px;
   animation: pendulumSwing 6s ease-in-out infinite;
