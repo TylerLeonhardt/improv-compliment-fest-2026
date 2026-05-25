@@ -217,6 +217,7 @@ h2 {
 
 .disco-ball {
   position: relative;
+  top: -5px;
   width: 180px;
   height: 180px;
   animation: pendulumSwing 6s ease-in-out infinite;
@@ -316,47 +317,67 @@ h2 {
   50%      { transform: rotate(12deg); }
 }
 
-/* ---------- Cloud Bubbles ---------- */
-.cloud-bubbles {
-  display: flex;
-  justify-content: center;
-  width: min(560px, 85vw);
-  margin-bottom: 1.5rem;
-  z-index: 2;
+/* ---------- RSVP Button ---------- */
+.rsvp-wrapper {
+  display: block;
+  text-align: center;
 }
 
-.cloud {
-  font-family: var(--font-script);
-  font-size: clamp(1.1rem, 3vw, 1.55rem);
-  color: var(--brown);
-  background: white;
-  padding: 0.7em 1.8em;
-  border-radius: 50px;
+.rsvp-btn {
+  display: block;
   position: relative;
+  z-index: 10;
+  width: fit-content;
+  margin: 10px auto 0;
+  padding: 16px 48px;
+  background: transparent;
+  border: 3.5px dashed var(--pink);
+  border-radius: var(--radius);
   box-shadow: var(--shadow-md);
-  border: 2.5px solid var(--brown);
-  animation: cloudBob 5s ease-in-out infinite;
-  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.25s ease, border-style 0.25s ease,
+              transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.cloud::before,
-.cloud::after {
+.rsvp-btn::before,
+.rsvp-btn::after {
   content: '';
   position: absolute;
-  background: white;
-  border: 2.5px solid var(--brown);
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  background: var(--cream);
+  border: 3px solid var(--pink);
   border-radius: 50%;
+  transform: translateY(-50%);
+}
+.rsvp-btn::before { left: -9px; }
+.rsvp-btn::after  { right: -9px; }
+
+.rsvp-text {
+  display: block;
+  font-family: var(--font-title);
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  color: var(--pink);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
 }
 
-.cloud-right::before { width: 16px; height: 16px; bottom: -12px; right: 30%; }
-.cloud-right::after  { width: 10px; height: 10px; bottom: -22px; right: 25%; }
+.rsvp-subtext {
+  display: block;
+  font-family: var(--font-script);
+  font-size: clamp(0.75rem, 2vw, 0.95rem);
+  color: var(--pink);
+  margin-top: 2px;
+}
 
-.cloud-right { animation-delay: 1.5s; }
-
-@keyframes cloudBob {
-  0%, 100% { transform: translateY(0); }
-  30%      { transform: translateY(-8px); }
-  70%      { transform: translateY(-3px); }
+.rsvp-btn:hover {
+  background: #FFE0ED;
+  border-style: solid;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
 
 /* ---------- Hero Content / Typography ---------- */
@@ -1098,16 +1119,9 @@ h2 {
     padding: 2rem 1rem 0;
   }
 
-  .cloud-bubbles {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .cloud::before,
-  .cloud::after {
-    display: none;
+  .rsvp-btn {
+    padding: 14px 36px;
+    max-width: 80vw;
   }
 
   .disco-ball {
@@ -1238,15 +1252,6 @@ h2 {
 @media (max-width: 420px) {
   .hero {
     padding: 1.5rem 0.75rem 0;
-  }
-
-  .cloud-bubbles {
-    width: 90vw;
-  }
-
-  .cloud {
-    font-size: 1rem;
-    padding: 0.5em 1.2em;
   }
 
   .info-cards {
