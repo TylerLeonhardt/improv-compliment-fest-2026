@@ -1125,6 +1125,8 @@ h2 {
   gap: 0.7rem;
   padding: 0 0.4rem;
   text-align: center;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .sched-intermission::before {
@@ -1150,6 +1152,8 @@ h2 {
   position: relative;
   z-index: 1;
   max-width: 6.5rem;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
   font-family: var(--font-title);
   font-size: 1.3rem;
   line-height: 1.15;
