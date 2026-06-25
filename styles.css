@@ -1166,31 +1166,6 @@ h2 {
 }
 
 
-.schedule-note {
-  max-width: 620px;
-  margin: 3rem auto 0;
-  text-align: center;
-  font-size: 1.3rem;
-  font-weight: 700;
-  line-height: 1.6;
-  color: var(--brown);
-  position: relative;
-  z-index: 1;
-}
-
-.schedule-note strong {
-  color: var(--pink);
-  -webkit-text-stroke: 0.5px var(--brown);
-  paint-order: stroke fill;
-}
-
-.schedule-note-star {
-  color: var(--gold);
-  -webkit-text-stroke: 1px var(--brown);
-  paint-order: stroke fill;
-  margin-right: 0.3rem;
-}
-
 .section-flower-4 {
   width: 75px;
   height: 75px;
