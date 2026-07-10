@@ -1337,6 +1337,82 @@ h2 {
   font-weight: 600;
 }
 
+/* ---------- Grant attribution: "Supported by" block ---------- */
+.footer-support {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.8rem;
+}
+
+.footer-support-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 1.4rem;
+}
+
+.footer-support-line {
+  flex: 1;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, rgba(245, 200, 66, 0.5), var(--gold));
+}
+
+.footer-support-divider .footer-support-line:last-child {
+  background: linear-gradient(90deg, var(--gold), rgba(245, 200, 66, 0.5), transparent);
+}
+
+.footer-support-flower {
+  flex: 0 0 auto;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.25));
+}
+
+.footer-support-label {
+  font-family: var(--font-script);
+  font-size: 1.2rem;
+  color: var(--gold-light);
+  margin-bottom: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+.footer-support-logo-link {
+  display: inline-block;
+  line-height: 0;
+  padding: 0.85rem 1.35rem;
+  background: #FFFFFF;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg), inset 0 0 0 2px rgba(245, 200, 66, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.footer-support-logo-link:hover,
+.footer-support-logo-link:focus-visible {
+  transform: translateY(-3px) rotate(-1deg);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32), inset 0 0 0 2px rgba(245, 200, 66, 0.6);
+  outline: none;
+}
+
+.footer-support-logo {
+  display: block;
+  width: 150px;
+  height: auto;
+}
+
+.footer-support-text {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  font-weight: 600;
+  color: var(--cream);
+  opacity: 0.85;
+  max-width: 380px;
+  margin: 1rem auto 0;
+}
+
 
 
 /* Section-level decorative flowers */
