@@ -1113,7 +1113,7 @@ h2 {
   display: inline-block;
   line-height: 0;
   padding: 0.85rem 1.35rem;
-  background: var(--cream);
+  background: #FFFFFF;
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg), inset 0 0 0 2px rgba(245, 200, 66, 0.4);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
