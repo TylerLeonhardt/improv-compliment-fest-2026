@@ -44,9 +44,11 @@ The current block contains one Instagram link. Add more links as additional `.fo
 Match the site's warm, playful palette via existing CSS variables — do not hardcode hex values:
 
 - Colors: `--gold #F5C842`, `--pink #E84B8A`, `--pink-light`, `--gold-light`, `--brown #5C3D2E`, `--cream #FFF8E7`.
-- The `.footer-social-link` button uses a gold→pink-light gradient, a `2.5px` `--brown` border, a fully rounded pill (`border-radius: 999px`), and a chunky offset "hard shadow" (`box-shadow: 0 4px 0 var(--brown), ...`) consistent with other buttons/cards on the site.
+- The `.footer-social-link` button uses a gold→pink-light gradient, a `2.5px` `var(--gold)` border, a fully rounded pill (`border-radius: 999px`), and a chunky offset "hard shadow" (`box-shadow: 0 4px 0 #2a1a12, ...`) consistent with other buttons/cards on the site.
 - Hover/focus lifts the button (`translateY(-3px) rotate(-1.5deg)`) and flips the gradient to pink→gold. Always keep a `:focus-visible` state matching hover for keyboard users.
 - Fonts: `--font-script` for the small "Follow along" label, `--font-body` (bold) for handles.
+
+> **Lesson learned — outline color on the dark footer:** The footer background is dark brown (`--brown #5C3D2E`), so an outline/border must contrast with it. A `--brown` border was effectively invisible (brown-on-brown). A `--cream` border worked but reads cold; the on-brand choice is a warm accent — use `var(--gold)` for the pill outline. Even where the gold border overlaps the gold end of the gradient fill, the pill's outer edge against the brown background plus the dark offset hard-shadow keep it distinct. Rule of thumb: pick outline colors for contrast against the dark footer, and prefer a warm accent (gold) over neutrals.
 
 ## Verification
 

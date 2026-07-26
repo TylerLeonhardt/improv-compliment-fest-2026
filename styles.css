@@ -1365,7 +1365,7 @@ h2 {
   line-height: 1;
   text-decoration: none;
   background: linear-gradient(135deg, var(--gold) 0%, var(--pink-light) 100%);
-  border: 2.5px solid var(--cream);
+  border: 2.5px solid var(--gold);
   border-radius: 999px;
   box-shadow: 0 4px 0 #2a1a12, 0 7px 16px rgba(0, 0, 0, 0.4);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
