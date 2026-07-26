@@ -1337,6 +1337,61 @@ h2 {
   font-weight: 600;
 }
 
+/* ---------- Social / "Follow along" ---------- */
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 1.6rem;
+}
+
+.footer-social-label {
+  font-family: var(--font-script);
+  font-size: 1.2rem;
+  color: var(--gold-light);
+  letter-spacing: 0.02em;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.1rem;
+  color: var(--brown);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--pink-light) 100%);
+  border: 2.5px solid var(--brown);
+  border-radius: 999px;
+  box-shadow: 0 4px 0 var(--brown), 0 6px 14px rgba(0, 0, 0, 0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus-visible {
+  transform: translateY(-3px) rotate(-1.5deg);
+  background: linear-gradient(135deg, var(--pink) 0%, var(--gold) 100%);
+  box-shadow: 0 7px 0 var(--brown), 0 12px 22px rgba(0, 0, 0, 0.32);
+  outline: none;
+}
+
+.footer-social-link:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 0 var(--brown), 0 5px 12px rgba(0, 0, 0, 0.28);
+}
+
+.footer-social-icon {
+  flex: 0 0 auto;
+  display: block;
+}
+
+.footer-social-handle {
+  letter-spacing: 0.01em;
+}
+
 /* ---------- Grant attribution: "Supported by" block ---------- */
 .footer-support {
   display: flex;
