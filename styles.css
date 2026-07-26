@@ -97,6 +97,7 @@ h2 {
 .about,
 .how-it-works,
 .schedule,
+.supporters,
 .community {
   animation: fadeInUp 0.8s ease both;
   animation-timeline: view();
@@ -1393,127 +1394,112 @@ h2 {
   letter-spacing: 0.01em;
 }
 
-/* ---------- Grant attribution: "Supported by" block ---------- */
-.footer-support {
+/* ========================================
+   SUPPORTERS SECTION (grant support + sponsor)
+   Promoted into main content — light/cream background,
+   so outlines/shadows use the brown chunky-outline treatment
+   used by the site's other light-background pills & cards
+   (rather than the gold-on-dark treatment tuned for the footer).
+   ======================================== */
+.supporters {
+  background: linear-gradient(180deg, var(--cream) 0%, var(--gold-tint) 50%, var(--cream) 100%);
+  padding: 5rem 2rem 5rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.supporters-inner {
+  max-width: 650px;
+  margin: 2.5rem auto 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 1.8rem;
+  gap: 2.75rem;
+  position: relative;
 }
 
-.footer-support-divider {
+.supporters-support,
+.supporters-sponsor {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  width: 100%;
-  max-width: 300px;
-  margin-bottom: 1.4rem;
 }
 
-.footer-support-line {
-  flex: 1;
-  height: 2px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, transparent, rgba(245, 200, 66, 0.5), var(--gold));
-}
-
-.footer-support-divider .footer-support-line:last-child {
-  background: linear-gradient(90deg, var(--gold), rgba(245, 200, 66, 0.5), transparent);
-}
-
-.footer-support-flower {
-  flex: 0 0 auto;
-  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.25));
-}
-
-.footer-support-label {
+.supporters-label {
   font-family: var(--font-script);
-  font-size: 1.2rem;
-  color: var(--gold-light);
-  margin-bottom: 0.9rem;
+  font-size: 1.6rem;
+  color: var(--pink);
+  -webkit-text-stroke: 0.75px var(--brown);
+  paint-order: stroke fill;
+  text-shadow: 1px 1px 0 rgba(92, 61, 46, 0.25);
+  margin-bottom: 1.1rem;
   letter-spacing: 0.02em;
 }
 
-.footer-support-logo-link {
+.supporters-logo-link {
   display: inline-block;
   line-height: 0;
-  padding: 0.85rem 1.35rem;
+  padding: 0.9rem 1.4rem;
   background: #FFFFFF;
+  border: 2.5px solid var(--brown);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-lg), inset 0 0 0 2px rgba(245, 200, 66, 0.4);
+  box-shadow: var(--shadow-md);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.footer-support-logo-link:hover,
-.footer-support-logo-link:focus-visible {
+.supporters-logo-link:hover,
+.supporters-logo-link:focus-visible {
   transform: translateY(-3px) rotate(-1deg);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32), inset 0 0 0 2px rgba(245, 200, 66, 0.6);
+  box-shadow: var(--shadow-lg);
   outline: none;
 }
 
-.footer-support-logo {
+.supporters-logo {
   display: block;
-  width: 150px;
+  width: 170px;
   height: auto;
 }
 
-.footer-support-text {
+.supporters-text {
   font-family: var(--font-body);
-  font-size: 0.9rem;
-  line-height: 1.5;
+  font-size: 0.95rem;
+  line-height: 1.55;
   font-weight: 600;
-  color: var(--cream);
-  opacity: 0.85;
-  max-width: 380px;
-  margin: 1rem auto 0;
+  color: var(--brown);
+  max-width: 400px;
+  margin: 1.1rem auto 0;
 }
 
-/* ---------- Sponsor credit: "Sponsored by" block ---------- */
-.footer-sponsor {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.7rem;
-  margin-top: 1.8rem;
-}
-
-.footer-sponsor-label {
-  font-family: var(--font-script);
-  font-size: 1.2rem;
-  color: var(--gold-light);
-  letter-spacing: 0.02em;
-}
-
-.footer-sponsor-link {
+.supporters-sponsor-link {
   display: inline-flex;
   align-items: center;
-  padding: 0.55rem 1.3rem;
+  padding: 0.6rem 1.4rem;
   color: var(--brown);
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1;
   letter-spacing: 0.01em;
   text-decoration: none;
   background: linear-gradient(135deg, var(--gold) 0%, var(--pink-light) 100%);
-  border: 2.5px solid var(--gold);
+  border: 2.5px solid var(--brown);
   border-radius: 999px;
-  box-shadow: 0 4px 0 #2a1a12, 0 7px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 0 var(--brown), 0 7px 16px rgba(92, 61, 46, 0.25);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-.footer-sponsor-link:hover,
-.footer-sponsor-link:focus-visible {
+.supporters-sponsor-link:hover,
+.supporters-sponsor-link:focus-visible {
   transform: translateY(-3px) rotate(-1.5deg);
   background: linear-gradient(135deg, var(--pink) 0%, var(--gold) 100%);
-  box-shadow: 0 7px 0 #2a1a12, 0 12px 24px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 7px 0 var(--brown), 0 12px 24px rgba(92, 61, 46, 0.3);
   outline: none;
 }
 
-.footer-sponsor-link:active {
+.supporters-sponsor-link:active {
   transform: translateY(-1px);
-  box-shadow: 0 3px 0 #2a1a12, 0 5px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 3px 0 var(--brown), 0 5px 12px rgba(92, 61, 46, 0.25);
 }
 
 

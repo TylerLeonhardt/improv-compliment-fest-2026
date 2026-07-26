@@ -7,7 +7,7 @@ This is a static single-page site (`index.html` + `styles.css`, no build step). 
 
 ## Where links live
 
-- HTML: the `.footer-social` block in `index.html`, placed after `.footer-date` and before the `.footer-support` grant attribution.
+- HTML: the `.footer-social` block in `index.html`, placed after `.footer-date` (it is the last block in the footer now that credits were promoted into the `.supporters` main-content section — see "Adding a sponsor credit" below).
 - CSS: the `/* Social / "Follow along" */` section in `styles.css`.
 
 The current block contains one Instagram link. Add more links as additional `.footer-social-link` anchors inside the same `.footer-social` container.
@@ -56,26 +56,30 @@ No linter/build/test exists. After editing, open `index.html` in a browser and c
 
 ## Adding a sponsor credit ("Sponsored by")
 
-Sponsors are a **credit**, not a social link, so they live with the other credits in the `.footer-support` block (grouped under the same divider as the "Supported by" grant attribution) — not in `.footer-social`. This keeps supporters and sponsors visually grouped rather than bolted on elsewhere.
+Sponsors are a **credit**, not a social link, so they live grouped with the other credits (under the same "Supported by" grant attribution) — not in `.footer-social`. This keeps supporters and sponsors visually grouped rather than bolted on elsewhere.
 
-- HTML: add a `.footer-sponsor` block **inside** `.footer-support`, after the `.footer-support-text` grant paragraph.
-- CSS: the `/* Sponsor credit: "Sponsored by" block */` section in `styles.css`, right after the grant `.footer-support-*` rules.
+> **Credits can live in main content, not just the footer.** Credits started in the footer but were promoted into a dedicated `.supporters` main-content section (`#supporters`, headed "Our Supporters") placed directly above the `.community` section — with the grant ("Supported by") first and the sponsor ("Sponsored by") beneath it, both inside `.supporters-inner`. Wherever they live, keep "Supported by" and "Sponsored by" grouped together. If credits ever move back into the footer, re-check the styling (see the background-contrast lesson below).
+
+- HTML: add a `.supporters-sponsor` block inside `.supporters-inner`, after the `.supporters-support` grant block.
+- CSS: the `/* SUPPORTERS SECTION */` block in `styles.css`.
 
 Markup (a well-styled **text** link — do NOT fabricate a logo you don't have):
 
 ```html
 <!-- Sponsor credit: SPONSOR_NAME -->
-<div class="footer-sponsor">
-  <p class="footer-sponsor-label">Sponsored by</p>
-  <a class="footer-sponsor-link"
+<div class="supporters-sponsor">
+  <p class="supporters-label">Sponsored by</p>
+  <a class="supporters-sponsor-link"
      href="SPONSOR_URL"
      target="_blank" rel="noopener noreferrer"
      aria-label="Visit our sponsor SPONSOR_NAME (opens in a new tab)">
-    <span class="footer-sponsor-name">SPONSOR_NAME</span>
+    <span class="supporters-sponsor-name">SPONSOR_NAME</span>
   </a>
 </div>
 ```
 
 Requirements match the social links: `target="_blank"` **and** `rel="noopener noreferrer"`, a descriptive `aria-label` that names the sponsor and notes it opens in a new tab.
 
-Styling: `.footer-sponsor-link` deliberately reuses the same pill treatment as `.footer-social-link` — gold→`--pink-light` gradient, `2.5px` `var(--gold)` border, `border-radius: 999px`, the chunky offset hard shadow, and the hover/focus lift that flips the gradient to pink→gold. `.footer-sponsor-label` uses `--font-script` in `--gold-light`, matching `.footer-support-label`. Prefer a tasteful text credit; a well-styled text link beats a fake/guessed logo. If a real logo is later provided, mirror the `.footer-support-logo-link` white-card treatment instead.
+Styling: `.supporters-sponsor-link` reuses the pill shape (gold→`--pink-light` gradient, `border-radius: 999px`, chunky offset hard shadow, hover/focus lift that flips the gradient to pink→gold), but tuned for the **light** main-content background — see the contrast lesson below. `.supporters-label` uses `--font-script` in `--pink` with a hairline `--brown` stroke for legibility on cream. Prefer a tasteful text credit; a well-styled text link beats a fake/guessed logo. If a real logo is provided, mirror the `.supporters-logo-link` white-card treatment (white card, `2.5px var(--brown)` border) instead.
+
+> **Lesson learned — match outline/shadow to the background.** The footer is dark brown, so credit pills there used a `var(--gold)` border and a near-black hard shadow (`#2a1a12`). When credits moved into the **light/cream** `.supporters` section, that treatment stopped working: a gold border on a gold-ish pill barely reads against cream, and a black shadow looks harsh. The on-brand fix is the same chunky-outline language the site's other light-background pills/cards use — a `2.5px solid var(--brown)` border and a **brown** hard shadow (`0 4px 0 var(--brown)`), with script labels in `--pink` (hairline brown stroke) instead of `--gold-light`. Rule of thumb: on the dark footer use a warm gold outline; on light main content use a brown outline + brown shadow. Always verify contrast visually after moving between the two.
