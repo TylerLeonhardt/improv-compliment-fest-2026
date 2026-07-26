@@ -1362,11 +1362,12 @@ h2 {
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 1rem;
+  line-height: 1;
   text-decoration: none;
   background: linear-gradient(135deg, var(--gold) 0%, var(--pink-light) 100%);
-  border: 2.5px solid var(--brown);
+  border: 2.5px solid var(--cream);
   border-radius: 999px;
-  box-shadow: 0 4px 0 var(--brown), 0 6px 14px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 4px 0 #2a1a12, 0 7px 16px rgba(0, 0, 0, 0.4);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
@@ -1374,13 +1375,13 @@ h2 {
 .footer-social-link:focus-visible {
   transform: translateY(-3px) rotate(-1.5deg);
   background: linear-gradient(135deg, var(--pink) 0%, var(--gold) 100%);
-  box-shadow: 0 7px 0 var(--brown), 0 12px 22px rgba(0, 0, 0, 0.32);
+  box-shadow: 0 7px 0 #2a1a12, 0 12px 24px rgba(0, 0, 0, 0.45);
   outline: none;
 }
 
 .footer-social-link:active {
   transform: translateY(-1px);
-  box-shadow: 0 3px 0 var(--brown), 0 5px 12px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 3px 0 #2a1a12, 0 5px 12px rgba(0, 0, 0, 0.4);
 }
 
 .footer-social-icon {
