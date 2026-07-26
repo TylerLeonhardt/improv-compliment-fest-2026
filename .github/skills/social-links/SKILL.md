@@ -1,13 +1,13 @@
 ---
 name: social-links
-description: Add or update social media links on the Compliment Fest site. Use when someone wants to surface an Instagram, TikTok, Discord, or other social/contact link. Explains the shared "Follow along" footer pattern, the accessible markup, and the on-brand styling so new links stay consistent.
+description: Add or update social media links and sponsor/supporter credits on the Compliment Fest site. Use when someone wants to surface an Instagram, TikTok, Discord, or other social/contact link, or credit a sponsor. Explains the shared "Follow along" social block, the "Sponsored by"/"Supported by" credits pattern, the accessible markup, and the on-brand styling so new links and credits stay consistent.
 ---
 
 This is a static single-page site (`index.html` + `styles.css`, no build step). Social links live in the footer inside the `.footer-social` "Follow along" block. Reuse that block for every social/contact link so they stay visually consistent and accessible.
 
 ## Where links live
 
-- HTML: the `.footer-social` block in `index.html`, placed after `.footer-date` and before the `.footer-support` grant attribution.
+- HTML: the `.footer-social` block in `index.html`, placed after `.footer-date` (it is the last block in the footer now that credits were promoted into the `.supporters` main-content section — see "Adding a sponsor credit" below).
 - CSS: the `/* Social / "Follow along" */` section in `styles.css`.
 
 The current block contains one Instagram link. Add more links as additional `.footer-social-link` anchors inside the same `.footer-social` container.
@@ -53,3 +53,37 @@ Match the site's warm, playful palette via existing CSS variables — do not har
 ## Verification
 
 No linter/build/test exists. After editing, open `index.html` in a browser and confirm: the link renders in the footer, opens the correct profile in a new tab, is keyboard-focusable with a visible focus state, and the icon/handle are legible against the dark footer.
+
+## Adding a sponsor credit ("Sponsored by")
+
+Sponsors are a **credit**, not a social link, so they live grouped with the other credits (under the same "Supported by" grant attribution) — not in `.footer-social`. This keeps supporters and sponsors visually grouped rather than bolted on elsewhere.
+
+> **Credits can live in main content, not just the footer.** Credits started in the footer but were promoted into a dedicated `.supporters` main-content section (`#supporters`, headed "Our Supporters") placed directly above the `.community` section. The grant ("Supported by") and the sponsor ("Sponsored by") now sit together inside a **single unified card** (`.supporters-card`) as two `.supporter-item` columns split by a dashed `.supporters-divider` — **not** two separate stacked sub-blocks. Wherever they live, keep "Supported by" and "Sponsored by" grouped together. If credits ever move back into the footer, re-check the styling (see the background-contrast lesson below).
+
+- HTML: inside `.supporters-inner > .supporters-card`, add/keep two `.supporter-item` blocks — the grant (`.supporter-item--grant`) first, the sponsor (`.supporter-item--sponsor`) second — separated by a `<div class="supporters-divider" aria-hidden="true">`. Each item holds the credit itself (logo card or sponsor pill) and a one-line `.supporter-blurb` describing who they are. **Do not** add a per-item role eyebrow — see the single-heading lesson below.
+- CSS: the `/* SUPPORTERS SECTION */` block in `styles.css`.
+
+Markup (a well-styled **text** link + a short real description — do NOT fabricate a logo or a blurb you can't source):
+
+```html
+<!-- Sponsor credit: SPONSOR_NAME -->
+<div class="supporter-item supporter-item--sponsor">
+  <a class="supporters-sponsor-link"
+     href="SPONSOR_URL"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Visit our sponsor SPONSOR_NAME (opens in a new tab)">
+    <span class="supporters-sponsor-name">SPONSOR_NAME</span>
+  </a>
+  <p class="supporter-blurb">ONE_SHORT_REAL_SENTENCE describing what the sponsor is.</p>
+</div>
+```
+
+Requirements match the social links: `target="_blank"` **and** `rel="noopener noreferrer"`, a descriptive `aria-label` that names the sponsor and notes it opens in a new tab.
+
+> **Blurbs must be real, not invented.** Give each sponsor a ~1-sentence `.supporter-blurb` so the credit feels meaningful instead of a bare link — but source it from the sponsor's actual site (`curl -sL SPONSOR_URL`, read the `<title>` / `meta[name=description]` / tagline / about copy). If you can't confidently tell what the product is, stop and ask rather than guessing. Example used for rolodex.lol: its site is titled "The Rolodex — Seattle Indie Improv" with the tagline "Find your next weird little show" and lists shows/jams/troupes, so the blurb is "The Rolodex is Seattle's indie improv calendar for finding your next weird little show."
+
+> **Prefer one unified card over stacked sub-headers — and let the section heading do the labeling.** Two separate "Supported by" / "Sponsored by" sub-blocks with big matching script headers read as redundant near-duplicates. The cohesive pattern is a single `.supporters-card` (white, `2.5px solid var(--brown)` border, brown hard shadow) holding both credits as sibling `.supporter-item` columns with a dashed divider between them. Originally each item carried a small script `.supporter-role` eyebrow ("Supported by" / "Sponsored by"), but those were later **removed** as redundant: the single "Our Supporters" section heading already frames both credits, so per-item role labels just repeated the point and made each column top-heavy. Rely on the one section heading; do not reintroduce per-item eyebrows (the `.supporter-role` class no longer exists). With the eyebrows gone, `.supporter-item` uses `justify-content: center` so the logo/pill + blurb stay vertically centered and balanced against the full-height dashed divider. On mobile (`max-width: 640px`) the card stacks to a column and the divider flips horizontal.
+
+Styling: `.supporters-sponsor-link` reuses the pill shape (gold→`--pink-light` gradient, `border-radius: 999px`, chunky offset hard shadow, hover/focus lift that flips the gradient to pink→gold), but tuned for the **light** main-content background — see the contrast lesson below. Prefer a tasteful text credit; a well-styled text link beats a fake/guessed logo. If a real logo is provided, mirror the `.supporters-logo-link` white-card treatment (white card, `2.5px var(--brown)` border) instead.
+
+> **Lesson learned — match outline/shadow to the background.** The footer is dark brown, so credit pills there used a `var(--gold)` border and a near-black hard shadow (`#2a1a12`). When credits moved into the **light/cream** `.supporters` section, that treatment stopped working: a gold border on a gold-ish pill barely reads against cream, and a black shadow looks harsh. The on-brand fix is the same chunky-outline language the site's other light-background pills/cards use — a `2.5px solid var(--brown)` border and a **brown** hard shadow (`0 4px 0 var(--brown)`), with script labels in `--pink` (hairline brown stroke) instead of `--gold-light`. Rule of thumb: on the dark footer use a warm gold outline; on light main content use a brown outline + brown shadow. Always verify contrast visually after moving between the two.

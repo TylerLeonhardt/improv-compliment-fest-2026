@@ -97,6 +97,7 @@ h2 {
 .about,
 .how-it-works,
 .schedule,
+.supporters,
 .community {
   animation: fadeInUp 0.8s ease both;
   animation-timeline: view();
@@ -1393,80 +1394,152 @@ h2 {
   letter-spacing: 0.01em;
 }
 
-/* ---------- Grant attribution: "Supported by" block ---------- */
-.footer-support {
+/* ========================================
+   SUPPORTERS SECTION (grant support + sponsor)
+   Promoted into main content — light/cream background,
+   so outlines/shadows use the brown chunky-outline treatment
+   used by the site's other light-background pills & cards
+   (rather than the gold-on-dark treatment tuned for the footer).
+   ======================================== */
+.supporters {
+  background: linear-gradient(180deg, var(--cream) 0%, var(--gold-tint) 50%, var(--cream) 100%);
+  padding: 5rem 2rem 5rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.supporters-inner {
+  max-width: 760px;
+  margin: 2.5rem auto 0;
+  position: relative;
+}
+
+/* One unified card holding both credits side by side */
+.supporters-card {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 2.5rem 2.75rem;
+  background: #FFFFFF;
+  border: 2.5px solid var(--brown);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 0 var(--brown), 0 12px 28px rgba(92, 61, 46, 0.18);
+}
+
+.supporter-item {
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 1.8rem;
-}
-
-.footer-support-divider {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  width: 100%;
-  max-width: 300px;
-  margin-bottom: 1.4rem;
+  text-align: center;
+  gap: 1.1rem;
 }
 
-.footer-support-line {
-  flex: 1;
-  height: 2px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, transparent, rgba(245, 200, 66, 0.5), var(--gold));
-}
-
-.footer-support-divider .footer-support-line:last-child {
-  background: linear-gradient(90deg, var(--gold), rgba(245, 200, 66, 0.5), transparent);
-}
-
-.footer-support-flower {
+/* Vertical divider between the two credits */
+.supporters-divider {
   flex: 0 0 auto;
-  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.25));
+  width: 2.5px;
+  align-self: stretch;
+  background: repeating-linear-gradient(
+    180deg,
+    var(--brown) 0,
+    var(--brown) 8px,
+    transparent 8px,
+    transparent 15px
+  );
+  opacity: 0.5;
+  border-radius: 999px;
 }
 
-.footer-support-label {
-  font-family: var(--font-script);
-  font-size: 1.2rem;
-  color: var(--gold-light);
-  margin-bottom: 0.9rem;
-  letter-spacing: 0.02em;
-}
-
-.footer-support-logo-link {
+.supporters-logo-link {
   display: inline-block;
   line-height: 0;
-  padding: 0.85rem 1.35rem;
+  padding: 0.9rem 1.4rem;
   background: #FFFFFF;
+  border: 2.5px solid var(--brown);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-lg), inset 0 0 0 2px rgba(245, 200, 66, 0.4);
+  box-shadow: var(--shadow-md);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.footer-support-logo-link:hover,
-.footer-support-logo-link:focus-visible {
+.supporters-logo-link:hover,
+.supporters-logo-link:focus-visible {
   transform: translateY(-3px) rotate(-1deg);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32), inset 0 0 0 2px rgba(245, 200, 66, 0.6);
+  box-shadow: var(--shadow-lg);
   outline: none;
 }
 
-.footer-support-logo {
+.supporters-logo {
   display: block;
-  width: 150px;
+  width: 170px;
   height: auto;
 }
 
-.footer-support-text {
+/* One-line descriptive blurb under each credit */
+.supporter-blurb {
   font-family: var(--font-body);
-  font-size: 0.9rem;
-  line-height: 1.5;
+  font-size: 0.95rem;
+  line-height: 1.55;
   font-weight: 600;
-  color: var(--cream);
-  opacity: 0.85;
-  max-width: 380px;
-  margin: 1rem auto 0;
+  color: var(--brown);
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.supporters-sponsor-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.4rem;
+  color: var(--brown);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--pink-light) 100%);
+  border: 2.5px solid var(--brown);
+  border-radius: 999px;
+  box-shadow: 0 4px 0 var(--brown), 0 7px 16px rgba(92, 61, 46, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.supporters-sponsor-link:hover,
+.supporters-sponsor-link:focus-visible {
+  transform: translateY(-3px) rotate(-1.5deg);
+  background: linear-gradient(135deg, var(--pink) 0%, var(--gold) 100%);
+  box-shadow: 0 7px 0 var(--brown), 0 12px 24px rgba(92, 61, 46, 0.3);
+  outline: none;
+}
+
+.supporters-sponsor-link:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 0 var(--brown), 0 5px 12px rgba(92, 61, 46, 0.25);
+}
+
+/* Stack the two credits on narrow screens */
+@media (max-width: 640px) {
+  .supporters-card {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1.75rem;
+  }
+
+  .supporters-divider {
+    width: auto;
+    height: 2.5px;
+    align-self: stretch;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--brown) 0,
+      var(--brown) 8px,
+      transparent 8px,
+      transparent 15px
+    );
+  }
 }
 
 
