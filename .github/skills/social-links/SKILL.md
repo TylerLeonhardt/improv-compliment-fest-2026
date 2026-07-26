@@ -58,28 +58,33 @@ No linter/build/test exists. After editing, open `index.html` in a browser and c
 
 Sponsors are a **credit**, not a social link, so they live grouped with the other credits (under the same "Supported by" grant attribution) — not in `.footer-social`. This keeps supporters and sponsors visually grouped rather than bolted on elsewhere.
 
-> **Credits can live in main content, not just the footer.** Credits started in the footer but were promoted into a dedicated `.supporters` main-content section (`#supporters`, headed "Our Supporters") placed directly above the `.community` section — with the grant ("Supported by") first and the sponsor ("Sponsored by") beneath it, both inside `.supporters-inner`. Wherever they live, keep "Supported by" and "Sponsored by" grouped together. If credits ever move back into the footer, re-check the styling (see the background-contrast lesson below).
+> **Credits can live in main content, not just the footer.** Credits started in the footer but were promoted into a dedicated `.supporters` main-content section (`#supporters`, headed "Our Supporters") placed directly above the `.community` section. The grant ("Supported by") and the sponsor ("Sponsored by") now sit together inside a **single unified card** (`.supporters-card`) as two `.supporter-item` columns split by a dashed `.supporters-divider` — **not** two separate stacked sub-blocks. Wherever they live, keep "Supported by" and "Sponsored by" grouped together. If credits ever move back into the footer, re-check the styling (see the background-contrast lesson below).
 
-- HTML: add a `.supporters-sponsor` block inside `.supporters-inner`, after the `.supporters-support` grant block.
+- HTML: inside `.supporters-inner > .supporters-card`, add/keep two `.supporter-item` blocks — the grant (`.supporter-item--grant`) first, the sponsor (`.supporter-item--sponsor`) second — separated by a `<div class="supporters-divider" aria-hidden="true">`. Each item has a small script `.supporter-role` eyebrow ("Supported by" / "Sponsored by"), the credit itself (logo card or sponsor pill), and a one-line `.supporter-blurb` describing who they are.
 - CSS: the `/* SUPPORTERS SECTION */` block in `styles.css`.
 
-Markup (a well-styled **text** link — do NOT fabricate a logo you don't have):
+Markup (a well-styled **text** link + a short real description — do NOT fabricate a logo or a blurb you can't source):
 
 ```html
 <!-- Sponsor credit: SPONSOR_NAME -->
-<div class="supporters-sponsor">
-  <p class="supporters-label">Sponsored by</p>
+<div class="supporter-item supporter-item--sponsor">
+  <p class="supporter-role">Sponsored by</p>
   <a class="supporters-sponsor-link"
      href="SPONSOR_URL"
      target="_blank" rel="noopener noreferrer"
      aria-label="Visit our sponsor SPONSOR_NAME (opens in a new tab)">
     <span class="supporters-sponsor-name">SPONSOR_NAME</span>
   </a>
+  <p class="supporter-blurb">ONE_SHORT_REAL_SENTENCE describing what the sponsor is.</p>
 </div>
 ```
 
 Requirements match the social links: `target="_blank"` **and** `rel="noopener noreferrer"`, a descriptive `aria-label` that names the sponsor and notes it opens in a new tab.
 
-Styling: `.supporters-sponsor-link` reuses the pill shape (gold→`--pink-light` gradient, `border-radius: 999px`, chunky offset hard shadow, hover/focus lift that flips the gradient to pink→gold), but tuned for the **light** main-content background — see the contrast lesson below. `.supporters-label` uses `--font-script` in `--pink` with a hairline `--brown` stroke for legibility on cream. Prefer a tasteful text credit; a well-styled text link beats a fake/guessed logo. If a real logo is provided, mirror the `.supporters-logo-link` white-card treatment (white card, `2.5px var(--brown)` border) instead.
+> **Blurbs must be real, not invented.** Give each sponsor a ~1-sentence `.supporter-blurb` so the credit feels meaningful instead of a bare link — but source it from the sponsor's actual site (`curl -sL SPONSOR_URL`, read the `<title>` / `meta[name=description]` / tagline / about copy). If you can't confidently tell what the product is, stop and ask rather than guessing. Example used for rolodex.lol: its site is titled "The Rolodex — Seattle Indie Improv" with the tagline "Find your next weird little show" and lists shows/jams/troupes, so the blurb is "The Rolodex is Seattle's indie improv calendar for finding your next weird little show."
+
+> **Prefer one unified card over stacked sub-headers.** Two separate "Supported by" / "Sponsored by" sub-blocks with big matching script headers read as redundant near-duplicates. The cohesive pattern is a single `.supporters-card` (white, `2.5px solid var(--brown)` border, brown hard shadow) holding both credits as sibling `.supporter-item` columns with a dashed divider between them; the roles become small script eyebrows (`.supporter-role`) rather than dueling headings. On mobile (`max-width: 640px`) the card stacks to a column and the divider flips horizontal.
+
+Styling: `.supporters-sponsor-link` reuses the pill shape (gold→`--pink-light` gradient, `border-radius: 999px`, chunky offset hard shadow, hover/focus lift that flips the gradient to pink→gold), but tuned for the **light** main-content background — see the contrast lesson below. `.supporter-role` uses `--font-script` in `--pink` with a hairline `--brown` stroke for legibility on cream. Prefer a tasteful text credit; a well-styled text link beats a fake/guessed logo. If a real logo is provided, mirror the `.supporters-logo-link` white-card treatment (white card, `2.5px var(--brown)` border) instead.
 
 > **Lesson learned — match outline/shadow to the background.** The footer is dark brown, so credit pills there used a `var(--gold)` border and a near-black hard shadow (`#2a1a12`). When credits moved into the **light/cream** `.supporters` section, that treatment stopped working: a gold border on a gold-ish pill barely reads against cream, and a black shadow looks harsh. The on-brand fix is the same chunky-outline language the site's other light-background pills/cards use — a `2.5px solid var(--brown)` border and a **brown** hard shadow (`0 4px 0 var(--brown)`), with script labels in `--pink` (hairline brown stroke) instead of `--gold-light`. Rule of thumb: on the dark footer use a warm gold outline; on light main content use a brown outline + brown shadow. Always verify contrast visually after moving between the two.
