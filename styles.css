@@ -1433,8 +1433,9 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  gap: 1rem;
+  gap: 1.1rem;
 }
 
 /* Vertical divider between the two credits */
@@ -1451,18 +1452,6 @@ h2 {
   );
   opacity: 0.5;
   border-radius: 999px;
-}
-
-/* Small eyebrow role label ("Supported by" / "Sponsored by") */
-.supporter-role {
-  font-family: var(--font-script);
-  font-size: 1.4rem;
-  color: var(--pink);
-  -webkit-text-stroke: 0.75px var(--brown);
-  paint-order: stroke fill;
-  text-shadow: 1px 1px 0 rgba(92, 61, 46, 0.25);
-  letter-spacing: 0.02em;
-  margin: 0;
 }
 
 .supporters-logo-link {
