@@ -1469,6 +1469,53 @@ h2 {
   margin: 1rem auto 0;
 }
 
+/* ---------- Sponsor credit: "Sponsored by" block ---------- */
+.footer-sponsor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 1.8rem;
+}
+
+.footer-sponsor-label {
+  font-family: var(--font-script);
+  font-size: 1.2rem;
+  color: var(--gold-light);
+  letter-spacing: 0.02em;
+}
+
+.footer-sponsor-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 1.3rem;
+  color: var(--brown);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--pink-light) 100%);
+  border: 2.5px solid var(--gold);
+  border-radius: 999px;
+  box-shadow: 0 4px 0 #2a1a12, 0 7px 16px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.footer-sponsor-link:hover,
+.footer-sponsor-link:focus-visible {
+  transform: translateY(-3px) rotate(-1.5deg);
+  background: linear-gradient(135deg, var(--pink) 0%, var(--gold) 100%);
+  box-shadow: 0 7px 0 #2a1a12, 0 12px 24px rgba(0, 0, 0, 0.45);
+  outline: none;
+}
+
+.footer-sponsor-link:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 0 #2a1a12, 0 5px 12px rgba(0, 0, 0, 0.4);
+}
+
 
 
 /* Section-level decorative flowers */

@@ -1,6 +1,6 @@
 ---
 name: social-links
-description: Add or update social media links on the Compliment Fest site. Use when someone wants to surface an Instagram, TikTok, Discord, or other social/contact link. Explains the shared "Follow along" footer pattern, the accessible markup, and the on-brand styling so new links stay consistent.
+description: Add or update social media links and sponsor/supporter credits on the Compliment Fest site. Use when someone wants to surface an Instagram, TikTok, Discord, or other social/contact link, or credit a sponsor. Explains the shared "Follow along" social block, the "Sponsored by"/"Supported by" credits pattern, the accessible markup, and the on-brand styling so new links and credits stay consistent.
 ---
 
 This is a static single-page site (`index.html` + `styles.css`, no build step). Social links live in the footer inside the `.footer-social` "Follow along" block. Reuse that block for every social/contact link so they stay visually consistent and accessible.
@@ -53,3 +53,29 @@ Match the site's warm, playful palette via existing CSS variables — do not har
 ## Verification
 
 No linter/build/test exists. After editing, open `index.html` in a browser and confirm: the link renders in the footer, opens the correct profile in a new tab, is keyboard-focusable with a visible focus state, and the icon/handle are legible against the dark footer.
+
+## Adding a sponsor credit ("Sponsored by")
+
+Sponsors are a **credit**, not a social link, so they live with the other credits in the `.footer-support` block (grouped under the same divider as the "Supported by" grant attribution) — not in `.footer-social`. This keeps supporters and sponsors visually grouped rather than bolted on elsewhere.
+
+- HTML: add a `.footer-sponsor` block **inside** `.footer-support`, after the `.footer-support-text` grant paragraph.
+- CSS: the `/* Sponsor credit: "Sponsored by" block */` section in `styles.css`, right after the grant `.footer-support-*` rules.
+
+Markup (a well-styled **text** link — do NOT fabricate a logo you don't have):
+
+```html
+<!-- Sponsor credit: SPONSOR_NAME -->
+<div class="footer-sponsor">
+  <p class="footer-sponsor-label">Sponsored by</p>
+  <a class="footer-sponsor-link"
+     href="SPONSOR_URL"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Visit our sponsor SPONSOR_NAME (opens in a new tab)">
+    <span class="footer-sponsor-name">SPONSOR_NAME</span>
+  </a>
+</div>
+```
+
+Requirements match the social links: `target="_blank"` **and** `rel="noopener noreferrer"`, a descriptive `aria-label` that names the sponsor and notes it opens in a new tab.
+
+Styling: `.footer-sponsor-link` deliberately reuses the same pill treatment as `.footer-social-link` — gold→`--pink-light` gradient, `2.5px` `var(--gold)` border, `border-radius: 999px`, the chunky offset hard shadow, and the hover/focus lift that flips the gradient to pink→gold. `.footer-sponsor-label` uses `--font-script` in `--gold-light`, matching `.footer-support-label`. Prefer a tasteful text credit; a well-styled text link beats a fake/guessed logo. If a real logo is later provided, mirror the `.footer-support-logo-link` white-card treatment instead.
